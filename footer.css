@@ -1,0 +1,14 @@
+/* FOOTER */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+footer{
+    background-color:  #30353e;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer img{
+
+    width:9rem
+ } 

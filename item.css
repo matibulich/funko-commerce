@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+ img{
+
+    width:20rem
+ } 
+ .col p, h2, h5 {font-family:'Raleway', sans-serif ; font-weight: bold;}
+ .agregar{
+    gap: 7px;
+ }

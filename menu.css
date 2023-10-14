@@ -1,0 +1,45 @@
+/* MENU */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header img{
+    width: 15rem;
+}
+
+.navbar{background-color: #30353e;
+width:100vw;
+    
+}
+.navbar-collapse{
+    justify-content: end;
+    
+}
+.navbar-nav{
+    align-items: center;
+}
+.nav-link{
+    font-family:'Raleway', sans-serif;
+    color: white;
+    
+    
+}
+
+
+
+.nav-link:hover {
+    color: #ebeaec;
+}
+
+.nav-link:visited {
+    color: #ebeaec;
+}
