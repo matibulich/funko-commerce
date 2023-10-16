@@ -17,7 +17,7 @@
     <header>
         <!-- Menu -->
         <nav class="navbar navbar-expand-lg p-4">
-            <div class="container">
+            <div class="container p-0">
                 <a class="navbar-brand" href="index.html">
                     <img src="/img/logo.svg" alt="Logo" class="d-inline-block align-text-top">
                 </a>
@@ -54,176 +54,221 @@
         </nav>
     </header>
 
-    <div class="container store-container">
-        <div class="row g-3 mb-5 mt-2">
-            <div class="row d-flex mt-5">
-                <div class="col-md-3 filter-search">
-                    <h3 class="filtro-titulo mt-2">Buscar</h3>
-                    <input type="search" name="buscar" id="buscar" placeholder="filtro o categoría"
-                        class="form-control">
-                    <h3 class="filtro-titulo mt-3">Ordenar por</h3>
-                    <select class="form-select">
-                        <option value="1">Mayor a menor</option>
-                        <option value="2">Menor a mayor</option>
-                        <option value="3">Alfabético A-Z</option>
-                        <option value="3">Alfabético Z-A</option>
-                    </select>
-                    <h3 class="filtro-titulo mt-3">Precio</h3>
-                    <div class="col d-flex filter-col">
-                        <label for="precio" class="label">min:
-                            <input type="number" placeholder="0" class="form-control" />
-                        </label>
-                        <label>-</label>
-                        <label for="precio" class="label">max:
-                            <input type="number" placeholder="0" class="form-control" />
-                        </label>
-                    </div>
-                    <h3 class="filtro-titulo mt-3">Filtrar</h3>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="check-nuevo" checked>
-                        <label class="form-check-label" for="check-nuevo">
-                            Nuevos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="check-oferta">
-                        <label class="form-check-label" for="check-oferta">
-                            Oferta
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="check-edicion">
-                        <label class="form-check-label" for="check-edicion">
-                            Edición
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="check-favoritos">
-                        <label class="form-check-label" for="check-favoritos">
-                            Favoritos
-                        </label>
-                    </div>
+    <div class="container store-container m-auto">
+        <!-- <div class="row g-3 mb-5 mt-2"> -->
+        <div class="row d-flex justify-content-center mt-5 p-0 g-0">
+            <div class="col-3 filter-search">
+                <h3 class="filtro-titulo mt-2">Buscar</h3>
+                <input type="search" name="buscar" id="buscar" placeholder="filtro o categoría" class="form-control">
+                <h3 class="filtro-titulo mt-3">Ordenar por</h3>
+                <select class="form-select">
+                    <option value="1">Mayor a menor</option>
+                    <option value="2">Menor a mayor</option>
+                    <option value="3">Alfabético A-Z</option>
+                    <option value="3">Alfabético Z-A</option>
+                </select>
+                <h3 class="filtro-titulo mt-3">Precio</h3>
+                <div class="col d-flex filter-col">
+                    <label for="precio" class="label">min:
+                        <input type="number" placeholder="0" class="form-control" />
+                    </label>
+                    <label>-</label>
+                    <label for="precio" class="label">max:
+                        <input type="number" placeholder="0" class="form-control" />
+                    </label>
                 </div>
-                <div class="col-md-9 store-row">
-                    <div class="col text-start m-2 item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/star-wars/trooper-1.webp" alt="stormtrooper" />
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-01.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                <h3 class="filtro-titulo mt-3">Filtrar</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check-nuevo" checked>
+                    <label class="form-check-label" for="check-nuevo">
+                        Nuevos
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check-oferta">
+                    <label class="form-check-label" for="check-oferta">
+                        Oferta
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check-edicion">
+                    <label class="form-check-label" for="check-edicion">
+                        Edición
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check-favoritos">
+                    <label class="form-check-label" for="check-favoritos">
+                        Favoritos
+                    </label>
+                </div>
+            </div>
+            <div class="col-9 store-row">
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/star-wars/trooper-1.webp" alt="stormtrooper" />
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-01.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">STAR WARS</p>
-                        <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                    <div class="col text-start m-2 item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-02.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                    <p class="product-brand">STAR WARS</p>
+                    <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-02.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">POKEMON</p>
-                        <h4 class="product-name">PIDGEOTTO</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                    <p class="product-brand">POKEMON</p>
+                    <h4 class="product-name">PIDGEOTTO</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
 
-                    </div>
-                    <div class="col text-start item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/harry-potter/luna-1.webp" alt="luna">
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-03.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/harry-potter/luna-1.webp" alt="luna">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-03.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">HARRY POTTER</p>
-                        <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                    <div class="col text-start m-2 item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/star-wars/trooper-1.webp" alt="stormtrooper" />
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-01.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                    <p class="product-brand">HARRY POTTER</p>
+                    <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/star-wars/trooper-1.webp" alt="stormtrooper" />
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-01.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">STAR WARS</p>
-                        <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                    <div class="col text-start m-2 item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-02.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                    <p class="product-brand">STAR WARS</p>
+                    <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-02.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">POKEMON</p>
-                        <h4 class="product-name">PIDGEOTTO</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                    <p class="product-brand">POKEMON</p>
+                    <h4 class="product-name">PIDGEOTTO</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
 
-                    </div>
-                    <div class="col text-start item-card">
-                        <ul class="product-image-list">
-                            <li class="product-image">
-                                <img class="product-image" src="/img/harry-potter/luna-1.webp" alt="luna">
-                            </li>
-                            <li class="hovered">
-                                <img class="product-image hidden" src="/assets/fk-box-03.png" alt="stormtrooper" />
-                            </li>
-                        </ul>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/harry-potter/luna-1.webp" alt="luna">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-03.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
 
-                        <p class="product-brand">HARRY POTTER</p>
-                        <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
-                        <h5 class="product-price">$ 1799,99</h5>
-                        <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
-                    </div>
+                    <p class="product-brand">HARRY POTTER</p>
+                    <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/star-wars/trooper-1.webp" alt="stormtrooper" />
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-01.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
+
+                    <p class="product-brand">STAR WARS</p>
+                    <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-02.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
+
+                    <p class="product-brand">POKEMON</p>
+                    <h4 class="product-name">PIDGEOTTO</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+
+                </div>
+                <div class="col text-start item-card">
+                    <ul class="product-image-list">
+                        <li class="product-image">
+                            <img class="product-image" src="/img/harry-potter/luna-1.webp" alt="luna">
+                        </li>
+                        <li class="hovered">
+                            <img class="product-image hidden" src="/assets/fk-box-03.png" alt="stormtrooper" />
+                        </li>
+                    </ul>
+
+                    <p class="product-brand">HARRY POTTER</p>
+                    <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
+                    <h5 class="product-price">$ 1799,99</h5>
+                    <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
                 </div>
             </div>
         </div>
-        <nav class="d-flex justify-content-center">
+        <!-- </div> -->
+        <nav class="d-flex justify-content-center my-4">
             <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
             </ul>
-          </nav>
+        </nav>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-white footer">
+    <footer class="text-center text-white footer container-fluid overflow-hidden">
         <div class="container p-4">
             <section>
-                <div class="row  justify-content-between align-items-center">
+                <div class="row justify-content-between align-items-center">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
                         <ul class="list-unstyled mb-0">
                             <li>

@@ -21,6 +21,7 @@
 
 .filter-search {
     font-size: 1.125rem;
+    max-width: 19rem;
     & .filtro-titulo {
         text-transform: uppercase;
         font-size: 1.5rem;
@@ -103,4 +104,10 @@ ul.product-image-list:hover li.hovered img {
     left: 0;
     right: 0;
     bottom: 0 !important;
+}
+@media (min-width: 1400px) {
+    .store-container{
+        max-width: 1400px;
+
+    }
 }
