@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 
- img{
+img {
+   width: 20rem
+}
 
-    width:20rem
- } 
- .col p, h2, h5 {font-family:'Raleway', sans-serif ; font-weight: bold;}
- .agregar{
-    gap: 7px;
- }
+.col p,
+h2,
+h5 {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+}
+
+.agregar {
+   gap: 7px;
+}
+.item-card {
+   & .product-cuotas {
+      color: #1c84b4; 
+      margin-top: 5px;
+   }
+}

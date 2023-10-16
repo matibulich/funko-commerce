@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import './menu.css';
+@import './item.css';
+@import './footer.css';
+@import './src/styles/css/shop.css';
+
+:root {
+    --text-normal: #111111;
+    --global-white: #FFFFFF;
+    --global-red: #FF3333;
+    --global-gray1: #333333;
+    --global-gray-border: #30343F;
+    --global-celeste: #1D84B5;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+@media screen and (max-width: 600px){
+    footer {
+        margin-top: 100vh;
+    }
+}
