@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
    margin: 0;
@@ -9,20 +9,56 @@
 img {
    width: 20rem
 }
+.col p.product-name,
+.item-view .product-description,
+.item-view .product-price {
+   color: #333 !important;
+   font-weight: 400 !important;
+}
 
-.col p,
 h2,
 h5 {
    font-family: 'Raleway', sans-serif;
    font-weight: 600;
 }
+.product-cuotas, .product-cuotas a {
+   color: #1c84b4 !important;
+   font-size: 0.87rem;
+}
+.item-view {
+   & .product-description {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #333;
+   }
+
+   & .product-price {
+      font-size: 2.3rem;
+   }
+   & .product-name {
+      font-weight: 700;
+      font-size: 2.3rem;
+   }
+
+}
+.item-card .product-name {
+   font-size: 1.125rem;
+}
+.product-description,
+.product-name,
+.product-brand {
+   font-family: 'Inter', sans-serif !important;
+}
 
 .agregar {
    gap: 7px;
 }
+.item-card .product-price, .item-view .product-brand {
+   font-size: 1rem;
+}
 .item-card {
    & .product-cuotas {
-      color: #1c84b4; 
+      color: #1c84b4;
       margin-top: 5px;
    }
 }
