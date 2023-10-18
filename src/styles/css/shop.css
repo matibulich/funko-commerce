@@ -1,0 +1,113 @@
+.filter-search .filtro-titulo,
+.product-brand,
+.product-name,
+.product-price,
+.product-cuotas {
+    font-family: 'Inter', sans-serif;
+}
+.filter-search input, .filter-search select {
+    border: 1px solid var(--global-gray-border);
+
+}
+.store-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.store-container {
+    height: 100%;
+    position: relative;
+}
+
+.filter-search {
+    font-size: 1.125rem;
+    max-width: 19rem;
+    & .filtro-titulo {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    & input[type="checkbox"] {
+        border: 1px solid var(--global-gray-border);
+        padding: 0.5rem;
+    }
+}
+
+.filter-col {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    gap: 0.5rem;
+    align-items: center;
+
+    & .label {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
+        & input {
+            max-width: 3.7rem;
+            max-height: 1.7rem;
+            text-align: center;
+            margin-left: 0.24rem;
+        }
+    }
+}
+
+.item-card {
+    max-width: 300px;
+    padding: 0.2rem;
+    & ul.product-image-list {
+        list-style-type:none;
+        width: fit-content;
+        padding: 0 !important;
+        overflow: hidden;
+  
+        & img {
+            max-width: 300px;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    & .product-name {
+        font-size: 1.125rem;
+    }
+
+    & .product-brand {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        font-size: 0.87rem;
+        color: var(--global-gray1);
+    }
+    & .product-price {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    & .product-cuotas {
+        font-size: 0.75rem;
+    }
+
+}
+ul.product-image-list img.hidden {
+    max-width: 300px;
+    display: none;
+}
+
+ul.product-image-list:hover li.product-image {
+    display: none;
+}
+ul.product-image-list:hover li.hovered img {
+    display: block;
+}
+.footer {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+}
+@media (min-width: 1400px) {
+    .store-container{
+        max-width: 1400px;
+
+    }
+}
