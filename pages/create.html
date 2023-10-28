@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear nuevo item</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="menu.css">
+
+    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <!-- Menu -->
+        <nav class="navbar navbar-expand-lg p-4">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="/img/logo.svg" alt="Logo" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/shop.html" role="button" aria-expanded="false">
+                                VER TIENDA
+                            </a>
+
+                        </li>
+                        <a class="nav-link" href="#">ADMIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SALIR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"
+                                    style="color: #ffffff;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <form action="">
+                <h2 class="mt-4">CREAR NUEVO ITEM</h2>
+                <div class="row mb-3 mt-4 formulario">
+
+                    <label class=" col-md-1 col-form-label" for="categoria"> Categoría:</label>
+                    <div class="col-md-3 ">
+                        <select class="form-select" aria-label="Seleccionar" id="categoria" name="categoria">
+                            <option selected>Seleccionar</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 col-form-label" for="licencia"> Licencia:</label>
+                    <div class="col-md-3">
+                        <select class="form-select" aria-label="Licencia" id="licencia" name="licencia">
+
+                            <option selected>Seleccionar</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row mb-3 formulario">
+                    <label class="col-md-2 col-form-label" for="nombre_producto">Nombre del
+                        producto:</label>
+                    <div class="col-md-4 ">
+                        <input type="text" class="form-control" id="nombre_producto" value="Kakashi Hatake" required>
+                    </div>
+
+                </div>
+                <div class="row mb-3 formulario">
+                    <div class="col-md-8 ">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="descripcion_producto" style="height: 100px"></textarea>
+                            <label for="descripcion_prdoucto">Descripción del producto</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row mb-3 formulario">
+
+
+                    <label class="col-md-1 col-form-label" for="sku" class="form-label">SKU:</label>
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="sku" value="SSK11AB001" required>
+                    </div>
+
+
+                    <label class="col-md-1 col-form-label" for="precio" class="form-label">Precio:</label>
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="precio" value="$0.000" required>
+                    </div>
+
+
+
+                    <label class="col-md-1 col-form-label" for="stock" class="form-label">Stock:</label>
+                    <div class="col-md-1 ">
+                        <input type="text" class="form-control" id="stock" value="0" required>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row mb-3 formulario">
+
+
+                    <label class="col-md-1 col-form-label" for="descuento" class="form-label">Descuento:</label>
+                    <div class="col-md-1 ">
+                        <input type="text" class="form-control" id="descuento" value="0%" required>
+                    </div>
+
+                    <label class="col-md-1 col-form-label" for="cuotas"> Cuotas</label>
+                    <div class="col-md-3">
+                        <select class="form-select" aria-label="cuotas" id="cuotas" name="cuotas">
+
+                            <option selected>3 Cuotas sin interés</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="row mb-3 formulario">
+
+                    <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
+                    <div class="col-md-6 ">
+                        <input class="form-control justify-content-sm-center" style="border: 0px;" type="file" id="formFile">
+
+                    </div>
+
+                    <div class="row mt-3 formulario d-flex ">
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-1 ">
+                            <button type="submit">Agergar producto</button>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 ">
+                            <button class="text-center " type="reset">Limpiar</button>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+             </div>
+
+
+        </div>
+        </form>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="text-center text-white " style=" margin-top: 5.8rem;">
+
+        <div class="container p-4">
+
+
+
+
+
+       
+
+                <div class="row  justify-content-between align-items-center">
+
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white nav-link">SHOP</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white nav-link">REGISTRARSE</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white nav-link">INGRESAR</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white nav-link">CONTACTO</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
+
+                        <img class="mt-1" src="img/isotype.svg" alt="">
+
+
+                    </div>
+
+                </div>
+
+       
+
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #30353e">
+
+            <p class="text-white mb-1"> All rights reserved 2023 - Funkshop</p>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+<style>
+    .header-menu{
+        min-height: 130px;
+    }
+</style>
