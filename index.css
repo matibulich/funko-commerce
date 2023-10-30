@@ -3,6 +3,7 @@
 @import './menu.css';
 @import './item.css';
 @import './footer.css';
+@import './src/styles/css/forms.css';
 @import './src/styles/css/shop.css';
 
 :root {
