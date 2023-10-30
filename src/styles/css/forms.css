@@ -1,6 +1,3 @@
-* {
-    overflow: hidden !important;
-}
 .page-title {
     font-family: 'Relaway', sans-serif;
 }
@@ -23,10 +20,10 @@ small#emailHelp {
 
 .forms {
     width: 350px;
+    max-width: 100%;
     align-items: center;
-    margin: auto;
-    position: relative;
-    row-gap: 1rem;
+    margin: 0;
+
     
     & ::placeholder {
         color: rgb(170, 170, 170);
@@ -93,3 +90,35 @@ small#emailHelp {
     width: fit-content;
 }
 
+@media screen and (min-width: 769px) {
+    .forms {
+        margin: auto;
+    }
+    .formss {
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .store-content {
+        margin-top: 0.8rem !important;
+    }
+    .page-title {
+        font-size: 1.7rem;
+        margin-top: 0;
+        line-height: 1.2;
+    }
+    .forms {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .formss {
+        flex-direction: column;
+        width: 100% !important;
+        row-gap: 0;
+        
+        & label {
+            margin-top: 0.2rem;
+        }
+    }
+}
