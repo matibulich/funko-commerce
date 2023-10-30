@@ -3,6 +3,7 @@
 @import './menu.css';
 @import './item.css';
 @import './footer.css';
+@import './src/styles/css/forms.css';
 @import './src/styles/css/shop.css';
 
 :root {
@@ -20,6 +21,6 @@
 }
 @media screen and (max-width: 600px){
     footer {
-        margin-top: 100vh;
+        margin-top: 2rem;
     }
 }
