@@ -10,7 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="/index.css">
 </head>
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="nav ">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown"
+                            <button class="btn dropdown-toggle nav-link" type="button" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 SHOP
                             </button>
@@ -56,10 +56,56 @@
         </nav>
     </header>
 
-    <div class="container store-container m-auto">
+    <div class="container store-container m-auto p-4 mb-4">
         <!-- <div class="row g-3 mb-5 mt-2"> -->
-        <div class="row d-flex justify-content-center mt-5 p-0 g-0 store-content">
-           <h1>Registrarse</h1>
+        <div class="justify-content-center mt-5 p-0 g-0 store-content">
+            <h1 class="page-title">CREA TU CUENTA</h1>
+            <div class="d-block col-md justify-content-center">
+                <div class="text-center m-auto form-div">Completá el formulario para ser parte de los Funkos</div>
+                <form id="register" class="forms">
+                    <div class="formss">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" aria-describedby="nombre"
+                            placeholder="John">
+                    </div>
+                    <div class="formss">
+                        <label for="nombre">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" aria-describedby="apellido"
+                            placeholder="Doe">
+                    </div>
+                    <div class="formss">
+                        <label for="exampleInputEmail1">Email:</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="johndow@correo.com">
+                    </div>
+                    <div class="formss">
+                        <label for="exampleInputPassword1">Contraseña:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*******">
+                    </div>
+                    <div class="formss">
+                        <label for="exampleInputPassword2">Repetir contraseña:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="*******">
+                    </div>
+                    <div class="d-flex col justify-content-center buttons mt-4">
+                        <button type="submit" class="btn btn-submit">Ingresar</button>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberme">
+                            <label class="form-check-label" for="rememberme">
+                                Recordarme
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="link d-flex justify-content-center mt-4">
+                       <a class="link">Olvidé mi contraseña</a> 
+                    </div>
+                    
+
+                </form>
+            </div>
+
+
+
         </div>
         <!-- </div> -->
     </div>
@@ -86,7 +132,7 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
-                        <img class="mt-1" src="../img/isotype.svg" alt="">
+                        <img class="mt-1" src="../../img/isotype.svg" alt="logo">
                     </div>
                 </div>
             </section>
