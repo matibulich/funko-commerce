@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+.page-title {
+    font-family: 'Relaway', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 2;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+
+small#emailHelp {
+    display: none;
+}
+
+.forms {
+    width: 250px;
+    max-width: 100%;     
+    
+}
+.forms__register {
+    width: 400px;
+    max-width: 100%;     
+}
+
+
+.formss {
+    display: flex;
+    row-gap: 1rem;
+    
+    position: relative;
+    justify-content:space-between;
+}
+
+
+@media screen and (min-width: 769px) {
+    .forms {
+        margin: auto;
+        gap: 1rem;
+    }
+    .formss {
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 600px) 
+
+{
+    .store-content {
+        margin-top: 0.8rem !important;
+    }
+    .page-title {
+        font-size: 1.7rem;
+        margin-top: 0;
+        line-height: 1.2;
+    }
+    .forms {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .formss {
+        
+        flex-direction: column;
+        width: 100% !important;
+        row-gap: 0;
+        
+        & label {
+            margin-top: 0.2rem;
+        }
+    }
+}
+.custom-input {
+    border: none; 
+    border-bottom: 1.5px solid red; 
+    background-color: transparent; 
+    width: 100%; 
+}
+.boton-ingresar {
+    
+    padding: 10px 20px;
+    background-color: #FF3333; 
+    color: #fff;     
+    text-decoration: none;
+    border: 1px solid #FF3333; 
+    border-radius: 0; 
+    width: 160px;
+    text-align: center;
+}
+.custom-checkbox {
+    border: 1px solid #000; 
+    border-radius: 0.25rem;
+    max-width: 15REM;
+  }
+  .custom-text-area {
+    border: 1px solid #000; 
+    border-radius: 0.25rem;
+    max-width: 100REM;
+  }
+  
+  .custom-text{
+    font-size: 1.7rem;
+  }
+
+
+  
+.label__shop {
+    
+    color: #000000;    
+    font-size: 2rem;
+}
+
+
+
+/* formulario */
+
+.formulario label{
+    font-family: 'Raleway', sans-serif, light;
+    font-weight:bold;
+}
+
+.formulario input{
+    color: grey;
+    
+    border:0px ;
+    border-bottom: solid 1px #FF3333;
+    border-radius: 0px;
+} 
+
