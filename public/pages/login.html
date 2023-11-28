@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/register.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar mx-auto" style="max-width: 1290px;">
+
+            <picture style="max-width: 372px;">
+                <a href="/index.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop">
+                </a>
+            </picture>
+
+            <ul class="d-flex align-items-center gap-2">
+                <li class="with-submenu">
+                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+
+                    <ul class="submenu">
+                        <li class="submenu__item"><a class="submenu__link">Funkos</a></li>
+                        <li class="submenu__item"><a class="submenu__link">Remeras</a></li>
+                        <li class="submenu__item"><a class="submenu__link">Llaveros</a></li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__cart" href="./shop.html">
+                        <img src="../images/icons/cart-icon.svg" alt="Carrito">
+                    </a>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container store-container m-auto p-4 mb-4">
+        <!-- <div class="row g-3 mb-5 mt-2"> -->
+        <div class="justify-content-center mt-5 p-0 g-0 store-content">
+            <h1 class="page-title">Ingresar a mi cuenta</h1>
+            <div class="d-block">
+                <form id="register" class="forms">
+                    <div class="formss">
+                        <label for="exampleInputEmail1">Email:</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="johndow@correo.com">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="formss">
+                        <label for="exampleInputPassword1">Contraseña:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*******">
+                    </div>
+                    <div class="d-flex col justify-content-center buttons mt-4">
+                        <button type="submit" class="btn btn-submit">Ingresar</button>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberme">
+                            <label class="form-check-label" for="rememberme">
+                                Recordarme
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="link d-flex justify-content-center mt-4">
+                        <a class="link">Olvidé mi contraseña</a>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer ">
+        <nav class="container navbar navbar__footer ">
+            <ul>
+                <li>
+                    <a class="footer__link" href="./shop.html">SHOP</a>
+                </li>
+                <li>
+                    <a class="footer__link" href="./login.html">LOGIN</a>
+                </li>
+                <li>
+                    <a class="footer__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture class="navbar__logo">
+                <img src="../images/branding/isotype.svg" alt="Isotipo FunkoShop">
+            </picture>
+        </nav>
+        <div class="copyright ">
+            <p> All rights reserved 2023 - Funkshop</p>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="../../public/scripts/auth.js" type="module"></script>
+</body>
+
+</html>

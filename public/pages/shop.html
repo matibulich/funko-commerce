@@ -10,51 +10,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/shop.css">
-    
+
 </head>
 
 <body>
     <header>
-        <!-- Menu -->
-        <nav class="navbar navbar-expand-lg p-4">
-            <div class="container p-0">
-                <a class="navbar-brand" href="index.html">
-                    <img src="../images/logo.svg" alt="Logo" class="d-inline-block align-text-top">
+        <nav class="navbar mx-auto" style="max-width: 1290px;">
+
+            <picture style="max-width: 372px;">
+                <a href="/index.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop">
                 </a>
-                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="nav ">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                SHOP
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        <a class="nav-link" href="#">CONTACTO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">LOGIN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"
-                                    style="color: #ffffff;"></i></a>
-                        </li>
+            </picture>
+
+            <ul class="d-flex align-items-center gap-2">
+                <li class="with-submenu">
+                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+
+                    <ul class="submenu">
+                        <li class="submenu__item"><a class="submenu__link">Funkos</a></li>
+                        <li class="submenu__item"><a class="submenu__link">Remeras</a></li>
+                        <li class="submenu__item"><a class="submenu__link">Llaveros</a></li>
                     </ul>
-                </div>
-            </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar__cart" href="./shop.html">
+                        <img src="../images/icons/cart-icon.svg" alt="Carrito">
+                    </a>
+
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -269,35 +266,27 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-white footer container-fluid overflow-hidden">
-        <div class="container p-4">
-            <section>
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white nav-link">SHOP</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white nav-link">INGRESAR</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white nav-link">CONTACTO</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
+    <footer class="footer ">
+        <nav class="container navbar navbar__footer ">
+            <ul>
+                <li>
+                    <a class="footer__link" href="./shop.html">SHOP</a>
+                </li>
 
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
-                        <img class="mt-1" src="../images/isotype.svg" alt="">
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #30353e">
-            <p class="text-white mb-1"> All rights reserved 2023 - Funkshop</p>
+                <li>
+                    <a class="footer__link" href="./login.html">LOGIN</a>
+                </li>
+
+                <li>
+                    <a class="footer__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture class="navbar__logo">
+                <img src="../images/branding/isotype.svg" alt="Isotipo FunkoShop">
+            </picture>
+        </nav>
+        <div class="copyright ">
+            <p> All rights reserved 2023 - Funkshop</p>
         </div>
         <!-- Copyright -->
     </footer>
@@ -305,7 +294,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-    <script src="src/script/index.js" type="module"></script>
+    <script src="" type="module"></script>
 </body>
 
 </html>
