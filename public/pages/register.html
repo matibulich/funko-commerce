@@ -14,46 +14,50 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/register.css">
+    <link rel="stylesheet" href="../styles/create.css">
 
 </head>
 
 <body>
     <header>
-        <nav class="navbar mx-auto" style="max-width: 1290px;">
-
-            <picture style="max-width: 372px;">
-                <a href="/index.html">
-                    <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop">
+        <!-- Menú -->
+        <nav class="navbar navbar-expand-lg p-4">
+            <div class="container p-0">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop" class="d-inline-block align-text-top">
                 </a>
-            </picture>
-
-            <ul class="d-flex align-items-center gap-2">
-                <li class="with-submenu">
-                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon
-                            icon="tabler:chevron-down"></iconify-icon></a>
-
-                    <ul class="submenu">
-                        <li class="submenu__item"><a class="submenu__link">Funkos</a></li>
-                        <li class="submenu__item"><a class="submenu__link">Remeras</a></li>
-                        <li class="submenu__item"><a class="submenu__link">Llaveros</a></li>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./shop.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SHOP
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Funkos</a></li>
+                                <li><a class="dropdown-item" href="#">Remeras</a></li>
+                                <li><a class="dropdown-item" href="#">Llaveros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"href="./contact.html">CONTACTO</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./shop.html"><i class="fa-solid fa-cart-shopping"
+                                    style="color: #ffffff;"></i></a>
+                        </li>
                     </ul>
-
-                </li>
-                <li class="nav-item">
-                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar__link" href="./login.html">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar__cart" href="./shop.html">
-                        <img src="../images/icons/cart-icon.svg" alt="Carrito">
-                    </a>
-
-                </li>
-            </ul>
+                </div>
+            </div>
         </nav>
     </header>
+
 
     <div class="container store-container m-auto p-4 mb-4">
         <!-- <div class="row g-3 mb-5 mt-2"> -->
@@ -61,10 +65,10 @@
             <h1 class="page-title">CREA TU CUENTA</h1>
             <div class="d-block col-md justify-content-center">
                 <div class="text-center m-auto form-div">Completá el formulario para ser parte de los Funkos</div>
-                <form id="register" class="forms">
+                <form id="register" class="forms formulario">
                     <div class="formss">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="nombre"
+                        <label class="formulario label" for="nombre">Nombre:</label>
+                        <input type="text" class="form-control formulario input" id="nombre" aria-describedby="nombre"
                             placeholder="John">
                     </div>
                     <div class="formss">
@@ -72,7 +76,7 @@
                         <input type="text" class="form-control" id="apellido" aria-describedby="apellido"
                             placeholder="Doe">
                     </div>
-                    <div class="formss">
+                    <div class="formss ">
                         <label for="exampleInputEmail1">Email:</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="johndow@correo.com">
@@ -85,20 +89,17 @@
                         <label for="exampleInputPassword2">Repetir contraseña:</label>
                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="*******">
                     </div>
-                    <div class="d-flex col justify-content-center buttons mt-4">
-                        <button type="submit" class="btn btn-submit">Ingresar</button>
+                    <div class="d-flex  justify-content-center mt-4 align-items-endcler">
+                        <button type="submit" class="formulario button d-flex justify-content-center me-3">Registrar</button>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="rememberme">
-                            <label class="form-check-label" for="rememberme">
-                                Recordarme
+                            <input class="form-check-input" type="checkbox" id="aceptoTerminos">
+                            <label class="form-check-label" for="aceptoTerminos">
+                                Acepto los terminos y condiciones
                             </label>
                         </div>
 
                     </div>
-                    <div class="link d-flex justify-content-center mt-4">
-                        <a class="link">Olvidé mi contraseña</a>
-                    </div>
-
+                    
 
                 </form>
             </div>

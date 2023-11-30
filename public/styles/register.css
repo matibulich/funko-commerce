@@ -2,18 +2,9 @@
     margin: var(--spacing-68) auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
     gap: var(--spacing-36);
 }
 
-.register__header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-16);
-    align-items: center;
-    justify-content: center;
-}
 
 .register__title {
     font-size: var(--font-jumbo);
