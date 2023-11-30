@@ -1,0 +1,319 @@
+/* Header FUNKOSHOP */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #30343F;
+    color: white;
+    width: 1440px;
+    height: 144px;
+    padding: 0 20px;
+}
+/*------------------*/
+
+/* Icono de carrito*/
+.icon {
+    width: 42px;
+    height: 36px;
+    fill: white;
+}
+/*------------------*/
+
+/* Titulo "CARRITO DE COMPRA" */
+.title {
+    display: inline-block;
+    width: auto;
+    padding: 128px 0px 20px 110px;
+    border: 0px 0px 5px 0px;
+}
+
+.title .layout-title {
+    font-family: Raleway;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: center;
+    border-bottom: 5px solid #FF3333;
+}
+/*------------------*/
+
+/* Titulos */
+.frame {
+    width: 1220px;
+    height: 51px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #00000040;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 110px 32px;
+}
+
+.frame .layout-frame {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: auto;
+    height: 19px;
+    margin: 0 125px;
+}
+/*------------------*/
+
+/* Producto */
+.flex-conteiner {
+    display: flex;
+    width: 1220px;
+    height: 195px;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px #00000040;
+    margin: 32px 110px;
+}
+
+.flex-item-1 {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 410px;
+    height: 195px;
+    margin: 0 10px;
+}
+
+.flex-item-1 .image {
+    display: block;
+    text-align: left;
+    width: 118.76px;
+    height: 118px;
+}
+
+.flex-item-1 .product {
+    width: 410px;
+    height: 118px;
+}
+
+.flex-item-1 .product .product-description {
+    text-align: left;
+    width: 272.75px;
+    height: 52px;
+    gap: 6px;
+}
+
+.flex-item-1 .product .product-description .product-price {
+    text-align: left;
+    width: 180.16px;
+    height: 17px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+
+.product-description h1 {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.product-description h2 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.product-description p {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+/* OPCION DE CANTIDAD*/
+
+.flex-item-2 {
+    width: 113px;
+    height: 40px;
+    gap: 8px;
+    display: flex; /* Hacer que los elementos sean flexibles */
+    align-items: center; /* Alinear verticalmente en el centro */
+}
+
+.flex-item-2 .numero {
+    width: 89.48px;
+    height: 40px;
+    border: 0.5px solid #C9C9C9
+}
+
+.flex-item-2 .operation {
+    width: 18px;
+    height: 36px;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-item-2 .operation .suma, .flex-item-2 .operation .resta {
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+    color: white;
+    background: #F24E1E;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------------------------------*/
+
+
+.flex-item-3 {
+    width: 99px;
+    height: 24px;
+}
+
+.flex-item-3 .fount {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.delete {
+    justify-items: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    fill: red;
+}
+
+.title-resume {
+    display: inline-block;
+    width: auto;
+    padding: 68px 0px 25px 1106px;
+    border: 0px 0px 5px 0px;
+}
+
+.title-resume .layout-title-resume {
+    font-family: Raleway;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: center;
+    border-bottom: 5px solid #FF3333;
+}
+
+/* Tabla de compras resumidas */
+
+.resume{
+    margin: 0px 110px 0px 715px;
+}
+
+.flex-conteiner-resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 572px;
+    height: 197px;
+    padding: 24px;
+    border-radius: 10px;
+    gap: 20px;
+    box-shadow: 0px 0px 10px 0px #00000040;
+}
+
+.flex-conteiner-resume .table-resume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 524px;
+    height: 19px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.flex-conteiner-resume .layout-resume {
+    display: inline;
+    width: auto;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #747474;
+}
+
+/* Seccion de total */
+
+.flex-conteiner-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 524px;
+    height: 32px;
+    padding: 8px, 0px, 0px, 0px;
+    border: 2px, 0px, 0px, 0px;
+    border-top: 2px solid #FF3333;
+}
+
+.flex-conteiner-total .layout-total {
+    display: inline;
+    width: auto;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #747474;
+}
+
+/* Boton de pagar */
+
+.flex-conteiner-pagar {
+    width: 572px;
+    height: 68.66px;
+    background: #FF3333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 44px 110px 0px 758px;
+}
+
+.flex-conteiner-pagar .layout-pagar {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
