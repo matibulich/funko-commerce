@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Raleway:wght@700&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/carrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">   
+    
+
+</head>
+
+<body>
+    
+
+    <header>
+        <!-- Menú -->
+        <nav class="navbar navbar-expand-lg p-4">
+            <div class="container p-0">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/shop.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SHOP
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Funkos</a></li>
+                                <li><a class="dropdown-item" href="#">Remeras</a></li>
+                                <li><a class="dropdown-item" href="#">Llaveros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"href="./contact.html">CONTACTO</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./shop.html"><i class="fa-solid fa-cart-shopping"
+                                    style="color: #ffffff;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <section>
+        <article class="title">
+            <span class="layout-title">CARRITO DE COMPRA</span>
+        </article>
+    </section>
+
+    <section>
+        <article class="frame">
+            <span class="layout-frame">DETALLE DEL PRODUCTO</span>
+            <span class="layout-frame">CANTIDAD</span>
+            <span class="layout-frame">TOTAL</span>
+        </article>
+    </section>
+
+    <section class="flex-conteiner">
+        <article class="flex-item-1">
+            <table class="product">
+                <th>
+                    <img class="image" src="/images/star-wars/baby-yoda-1.webp" alt="Star Wars Baby Yoda BlueBall">
+                </th>
+                <th class="product-description">
+                    <h1>BABY YODA BLUEBALL</h1>
+                    <h2>STAR WARS</h2>
+                    <p class="product-price">precio: $1799,99</p>
+                </th>
+            </table>
+        </article>
+        <article class="flex-item-2">
+            <table class="cantidad">
+                <th class="numero">
+                    <span id="valor">1</span>
+                </th>
+                <td class="operation">
+                    <div class="suma" id="incrementar">+</div>
+                    <div class="resta" id="decrementar">-</div>
+                </td>
+            </table>
+        </article>
+        <article class="flex-item-3">
+            <div class="fount">$1799,99</div>
+        </article>
+        <article>
+            <svg class="delete" xmlns="http://www.w3.org/2000/svg" height="1em"
+                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+            </svg>
+        </article>
+    </section>
+
+    <section class="flex-conteiner">
+        <article class="flex-item-1">
+            <table class="product">
+                <th>
+                    <img class="image" src="/images/pokemon/pidgeotto-1.webp" alt="Star Wars Baby Yoda BlueBall">
+                </th>
+                <th class="product-description">
+                    <h1>PIDGEOTTO</h1>
+                    <h2>POKEMON</h2>
+                    <p class="product-price">precio: $1799,99</p>
+                </th>
+            </table>
+        </article>
+        <article class="flex-item-2">
+            <table class="cantidad">
+                <th class="numero">
+                    <span id="valor">1</span>
+                </th>
+                <td class="operation">
+                    <div class="suma" id="incrementar">+</div>
+                    <div class="resta" id="decrementar">-</div>
+                </td>
+            </table>
+        </article>
+        <article class="flex-item-3">
+            <div class="fount">$1799,99</div>
+        </article>
+        <article>
+            <svg class="delete" xmlns="http://www.w3.org/2000/svg" height="1em"
+                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+            </svg>
+        </article>
+    </section>
+    <section class="title-resume">
+        <article>
+            <span class="layout-title-resume">RESUMEN</span>
+        </article>
+    </section>
+    <section class="resume">
+        <article class="flex-conteiner-resume">
+            <article>
+                <article class="table-resume">
+                        <span>CANTIDAD DE ELEMENTOS</span>
+                        <span class="layout-resume">3</span>
+                </article>
+                <article class="table-resume">
+                        <span>SUBTOTAL</span>
+                        <span class="layout-resume">$5.399,97</span>
+                </article>
+                <article class="table-resume">
+                        <span>ENVIO</span>
+                        <span class="layout-resume">$0,00</span>
+                </article>
+                <article class="flex-conteiner-total">
+                        <span>TOTAL</span>
+                        <span class="layout-total">$5.399,97</span>
+                </article>
+            </article>
+        </article>
+    </section>
+    <section>
+        <article class="flex-conteiner-pagar mb-5">
+            <div class="layout-pagar">IR A PAGAR</div>
+        </article>
+    </section>
+
+
+    <footer class="footer ">
+
+        <nav class="container navbar navbar__footer ">
+
+            <ul>
+
+                <li>
+                    <a class="footer__link" href="./shop.html">SHOP</a>
+                </li>
+
+                <li>
+                    <a class="footer__link" href="./login.html">LOGIN</a>
+                </li>
+
+                <li>
+                    <a class="footer__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture class="navbar__logo">
+                <img src="../images/branding/isotype.svg" alt="Isotipo FunkoShop">
+            </picture>
+
+        </nav>
+
+        <div class="copyright ">
+            <p> All rights reserved 2023 - Funkshop</p>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+</body>
+<script src="/scripts/script_carrito.js"></script>
+</html>

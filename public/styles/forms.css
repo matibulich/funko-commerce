@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 
+html{
+    min-height: 100vh;
+}
+
 .page-title {
     font-family: 'Relaway', sans-serif;
     text-transform: uppercase;
@@ -19,23 +23,16 @@ small#emailHelp {
 }
 
 .forms {
-    width: 250px;
+    width: 50%;
     max-width: 100%;     
     
 }
 .forms__register {
-    width: 400px;
+    width: 50%;
     max-width: 100%;     
 }
 
 
-.formss {
-    display: flex;
-    row-gap: 1rem;
-    
-    position: relative;
-    justify-content:space-between;
-}
 
 
 @media screen and (min-width: 769px) {
@@ -55,7 +52,7 @@ small#emailHelp {
     }
     .page-title {
         font-size: 1.7rem;
-        margin-top: 0;
+        margin-top: 15px;
         line-height: 1.2;
     }
     .forms {
@@ -74,23 +71,8 @@ small#emailHelp {
         }
     }
 }
-.custom-input {
-    border: none; 
-    border-bottom: 1.5px solid red; 
-    background-color: transparent; 
-    width: 100%; 
-}
-.boton-ingresar {
-    
-    padding: 10px 20px;
-    background-color: #FF3333; 
-    color: #fff;     
-    text-decoration: none;
-    border: 1px solid #FF3333; 
-    border-radius: 0; 
-    width: 160px;
-    text-align: center;
-}
+
+
 .custom-checkbox {
     border: 1px solid #000; 
     border-radius: 0.25rem;

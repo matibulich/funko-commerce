@@ -4,18 +4,24 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+
 }
 
-
+img {
+   width: 20rem
+}
 .col p.product-name,
 .item-view .product-description,
 .item-view .product-price {
    color: #333 !important;
    font-weight: 400 !important;
-
 }
 
-
+h2,
+h5 {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+}
 .product-cuotas, .product-cuotas a {
    color: #1c84b4 !important;
    font-size: 0.87rem;
@@ -37,8 +43,7 @@
 
 }
 .item-card .product-name {
-   font-size: 1.125¡rem;
-   font-weight: bold
+   font-size: 1.125rem;
 }
 .product-description,
 .product-name,
@@ -57,4 +62,14 @@
       color: #1c84b4;
       margin-top: 5px;
    }
+}
+
+.cantidad_add_sub{
+   background-color: #333;
+   color: white;
+   height: 18px;
+   width: 18px;
+   margin:2px;
+border:none;
+padding-left: 3px;
 }

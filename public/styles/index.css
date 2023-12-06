@@ -2,6 +2,9 @@
 @import url('./forms.css');
 @import url('./register.css');
 @import url('./shop.css');
+@import url('./menu.css');
+@import url('./create.css');
+@import url('./footer.css');
 
 .col p.product-name,
 .item-view .product-description,
@@ -139,11 +142,7 @@ img {
 }
 
 /*Estilos para el Header*/
-header {
-    background-color: var(--dark-background-solid);
-    padding: var(--spacing-36);
-    color: white;
-}
+
 
 .navbar__link {
     font-size: var(--font-medium);
@@ -190,6 +189,10 @@ header {
     background-color: var(--primary-900);
     transition: background .3s ease-in-out;
 }
+.nav-item .nav-link:hover {
+    color: #ebeaec;
+}
+
 
 /* BANNER o HERO*/
 .hero {
@@ -390,6 +393,11 @@ iconify-icon {
     color: var(--light-font);
 }
 
+footer img{
+
+    width:9rem
+ } 
+
 @keyframes fade {
     0% {
         opacity: 0;
@@ -401,7 +409,8 @@ iconify-icon {
 }
 
 .navbar__footer {
-    padding-top: 8rem;
+    padding-top: 5rem;
+    
 }
 
 /*  EDIT  */

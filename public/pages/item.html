@@ -8,135 +8,130 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+   
+    <link rel="stylesheet" href="/styles/item.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-r6K/2QCn6P8TusC1KjQXVp0Q/cg3/Zv5H1J5weVzwqVdp0X5ytA8nv4rbTC/AxLr" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/forms.css">
-  <link rel="stylesheet" href="../styles/item.css">
-
+    
+  
 
 </head>
 
 <body>
   <header>
-    <nav class="navbar mx-auto" style="max-width: 1290px;">
-
-        <picture style="max-width: 372px;">   
-            <a href="/index.html">
-                <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop">
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg p-4">
+        <div class="container p-0">
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/branding/logo_light_horizontal.svg" alt="Logotipo FunkoShop" class="d-inline-block align-text-top">
             </a>
-        </picture>
-
-        <ul class="d-flex align-items-center gap-2">
-            <li class="with-submenu" >
-                <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
-            
-                <ul class="submenu">
-                    <li class="submenu__item"><a class="submenu__link">Funkos</a></li>
-                    <li class="submenu__item"><a class="submenu__link">Remeras</a></li>                        
-                    <li class="submenu__item"><a class="submenu__link">Llaveros</a></li>                        
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./shop.html" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SHOP
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Funkos</a></li>
+                            <li><a class="dropdown-item" href="#">Remeras</a></li>
+                            <li><a class="dropdown-item" href="#">Llaveros</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"href="./contact.html">CONTACTO</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shop.html"><i class="fa-solid fa-cart-shopping"
+                                style="color: #ffffff;"></i></a>
+                    </li>
                 </ul>
-
-            </li>
-            <li class="nav-item">
-                <a class="navbar__link" href="./contact.html">CONTACTO</a>
-            </li>
-            <li class="nav-item">
-                <a class="navbar__link" href="./login.html">LOGIN</a>
-            </li>                
-            <li class="nav-item">
-                <a class="navbar__cart" href="./shop.html">
-                    <img src="../images/icons/cart-icon.svg" alt="Carrito">
-                </a>
-
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
-  <div class="container text-left">
-
-
-    <div class="row d-flex w-100 my-5">
-
-
+  <div class="container text-left ">
+    <div class="row">
       <div class="col d-flex m-auto">
-        <img src="../images/star-wars/baby-yoda-1.webp" alt="baby-yoda">
+        <img src="/images/star-wars/baby-yoda-1.webp" alt="baby-yoda">
       </div>
-        <!-- recuadro de datos  -->
+
       <div class="col d-flex flex-column justify-content-center align-items-start item-view">
         <p class="product-brand">STAR WARS</p>
         <h3 class="product-name">BABY YODA BLUEBALL</h2>
-        <h3 class="product-description pb-3">Figura coleccionable de baby yoda (Grogu) - the Mandalorian saga, edicion limitada.</h5>
+        <h3 class="product-description">Figura coleccionable de baby yoda (Grogu) - the Mandalorian saga, edicion limitada.</h5>
         <p class="product-price">$ 1799,99</p>
-        <div class="agregar d-flex justify-content-center mb-4">
-          <input type="number" id="quantity" name="quantity" min="1" max="99"/>
-          <button type="button" class="boton-ingresar btn-danger add-btn" id="btn-add">Agregar al carrito</button>
+        <div class="agregar d-flex justify-content-left flex-wrap ">
+          
+          <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="0" max="100" value="0">
+          <div class="cantidad d-flex flex-column">
+          <button class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
+          <button class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
         </div>
-        <p class="product-cuotas "><a href="#">Ver metodos de pago</a> - 3 CUOTAS SIN INTERES</p>
+          <button type="button" class="btn btn-danger add-btn" id="btn-add">Agregar al carrito</button>
+        </div>
+        <p class="product-cuotas"><a href="#">Ver metodos de pago</a> - 3 CUOTAS SIN INTERES</p>
+
       </div>
 
-
-      <section class="slider container glide">
       <div class="row productos-relacionados">
         <h3 class="d-flex mt-5">PRODUCTOS RELACIONADOS</h3>
 
       </div>
-    
-      <div class="row d-flex cards">
 
-        <div class="slider__item glide__slide  col text-start m-2 item-card"><img src="../images/star-wars/trooper-1.webp" alt="baby-yoda">
+      <div class="row d-flex cards">
+        <div class="col text-start m-2 item-card"><img src="/images/star-wars/trooper-1.webp" alt="baby-yoda">
           <p class="product-brand">STAR WARS</p>
           <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
           <h5 class="product-price">$ 1799,99</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
         </div>
-
-        <div class="slider__item glide__slide  col text-start m-2 item-card"><img src="../images/pokemon/pidgeotto-1.webp" alt="pidgeotto">
+        <div class="col text-start m-2 item-card"><img src="/images/pokemon/pidgeotto-1.webp" alt="pidgeotto">
           <p class="product-brand">POKEMON</p>
           <h4 class="product-name">PIDGEOTTO</h4>
           <h5 class="product-price">$ 1799,99</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+
         </div>
 
-        <div class="slider__item glide__slide col text-start item-card"><img src="../images/harry-potter/luna-1.webp" alt="luna">
+        <div class="col text-start item-card"><img src="/images/harry-potter/harry-1.webp" alt="luna">
           <p class="product-brand">HARRY POTTER</p>
           <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
           <h5 class="product-price">$ 1799,99</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+
         </div>
 
       </div>
 
 
-      
-    </section>
-
-
     </div>
   </div>
 
-
-  <!-- Footer -->
   <footer class="footer ">
-            
-    <nav class="container navbar navbar__footer ">                
-    
+
+    <nav class="container navbar navbar__footer ">
+
         <ul>
 
-            <li >
-                <a class="footer__link" href="../pages/shop.html">SHOP</a>
+            <li>
+                <a class="footer__link" href="./shop.html">SHOP</a>
             </li>
 
-            <li >
-                <a class="footer__link" href="../pages/admin/login.html">LOGIN</a>
+            <li>
+                <a class="footer__link" href="./login.html">LOGIN</a>
             </li>
 
-            <li >
-                <a class="footer__link" href="../pages/contact.html">CONTACTO</a>
+            <li>
+                <a class="footer__link" href="./contact.html">CONTACTO</a>
             </li>
         </ul>
         <picture class="navbar__logo">
@@ -144,35 +139,26 @@
         </picture>
 
     </nav>
-        
+
     <div class="copyright ">
-        <p > All rights reserved 2023 - Funkshop</p>
+        <p> All rights reserved 2023 - Funkshop</p>
     </div>
     <!-- Copyright -->
 </footer>
 
+
+
+
+
+
+
+
+<script src="/scripts/item.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
-    <script src="./src/script/index.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script>
-        new Glide('.glide',{
-            type: 'carousel',
-            startAt: 0,
-            perView: 3,
-            gap: 30,
-            breakpount:{
-                991:{
-                    perView: 2
-                },
-                768:{
-                    perView: 1
-                }
-            }
-        }).mount();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 
 

@@ -3,6 +3,8 @@ const app = express();
 
 const PORT = 3002;
 
+
+
 app.use(express.static('public'));
 app.use(express.static('public/pages'));
 
@@ -11,7 +13,7 @@ app.use(express.static('public/pages'));
 //     res.status(404).send("Recurso no encontrado")
 // })
 app.get('shop', (req, res) => {
-    res.sendFile(__direname + '/public/pages/shop.html')
+    res.sendFile(path.resolve__direname + './public/pages/shop.html')
 
 })
 app.get('/', (req, res) => {
