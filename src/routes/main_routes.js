@@ -11,13 +11,6 @@ router.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../../public/pages/login.html'))
 })
 
-router.get('/carrito', (req, res) => {
-   res.sendFile(path.resolve(__dirname, '../../public/pages/carrito.html'))})
-
-router.get('/registro', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/register.html'))
-})
-
 router.get('/contacto', (req, res) => 
     res.send
     ('nadie hizo el contacto :((:(:('))
