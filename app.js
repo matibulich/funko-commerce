@@ -10,12 +10,14 @@ const app = express();
 const mainRoutes = require('./src/routes/main_routes');
 const adminRoutes = require('./src/routes/admin_routes')
 const shopRoutes = require('./src/routes/shop_routes')
-const characterRoutes = require('./src/routes/character_routes')
+const authRoutes = require('./src/routes/auth_routes')
+
 
 
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
+app.use('/auth', authRoutes);
 
 
 
@@ -25,7 +27,7 @@ app.use('/admin', adminRoutes);
 
 
 app.use(express.static('public'));
-//app.use(express.static('public/pages'));
+
 
 
 // app.use((req, res) => {
