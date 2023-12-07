@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "nombre": "Charmander-box",
+        "marca": "Pokemon",
+        "img": "charmander-1.webp",
+        "img2": "charmander-box.webp",
+        "precio": 2500
+    },
+    {
+        "id": 2,
+        "nombre": "Dragonite-box",
+        "marca": "Pokemon",
+        "img": "dragonite-1.webp",
+        "img2": "dragonite-box.webp",
+        "precio": 2500
+    },
+    {
+        "id": 3,
+        "nombre": "Pidgeotto-box",
+        "marca": "Pokemon",
+        "img": "pidgeotto-1.webp",
+        "img2": "pidgeotto-box.webp",
+        "precio": 3000
+    },
+    {
+        "id": 4,
+        "nombre": "Pikachu-box",
+        "marca": "Pokemon",
+        "img": "pikachu-1.webp",
+        "img2": "pikachu-box.webp",
+        "precio": 3500
+    },
+    {
+        "id": 5,
+        "nombre": "Vulpix-box",
+        "marca": "Pokemon",
+        "img": "vulpix-1.webp",
+        "img2": "vulpix-box.webp",
+        "precio": 3550
+    },
+    {
+        "id": 6,
+        "nombre": "Baby Yoda-box",
+        "marca": "Star wars",
+        "img": "baby-yoda-1.webp",
+        "img2": "baby-yoda-box.webp",
+        "precio": 4000
+    },
+    {
+        "id": 7,
+        "nombre": "Bobbafeth-box",
+        "marca": "Star wars",
+        "img": "bobbafeth-1.webp",
+        "img2": "bobbafeth-box.webp",
+        "precio": 4500
+    },
+    {
+        "id": 8,
+        "nombre": "Luke-box",
+        "marca": "Star wars",
+        "img": "luke-1.webp",
+        "img2": "luke-box.webp",
+        "precio": 2500
+    },
+    {
+        "id": 9,
+        "nombre": "Trooper-box",
+        "marca": "Star wars",
+        "img": "trooper-1.webp",
+        "img2": "trooper-box.webp",
+        "precio": 1500
+    },
+    {
+        "id": 10,
+        "nombre": "Harry-box",
+        "marca": "Harry Potter",
+        "img": "harry-1.webp",
+        "img2": "harry-box.webp",
+        "precio": 2500
+    },
+    {
+        "id": 11,
+        "nombre": "Hermione-box",
+        "marca": "Harry Potter",
+        "img": "hermione-1.webp",
+        "img2": "hermione-box.webp",
+        "precio": 3000
+    },
+    {
+        "id": 12,
+        "nombre": "Luna-box",
+        "marca": "Harry Potter",
+        "img": "luna-1.webp",
+        "img2": "luna-box.webp",
+        "precio": 3550
+    },
+    {
+        "id": 13,
+        "nombre": "Snape-patronus-box",
+        "marca": "Harry Potter",
+        "img": "snape-patronus-1.webp",
+        "img2": "snape-patronus-box.webp",
+        "precio": 5000
+    }
+]
