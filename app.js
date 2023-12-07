@@ -25,7 +25,7 @@ app.use('/admin', adminRoutes);
 
 
 app.use(express.static('public'));
-app.use(express.static('public/pages'));
+//app.use(express.static('public/pages'));
 
 
 // app.use((req, res) => {
