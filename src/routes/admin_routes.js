@@ -1,31 +1,20 @@
 // rutas del admin
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const controller = require('../controllers/admin_controller')
 
 
-router.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html')) //entramos al admin
-})
 
-router.get('/create', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/admin/create.html')) //agregar un nuevo item vista
-})
+router.get('/',controller.admin )
 
-router.post('/create', (req, res) => {
-    res.send('Ruta para que al hacer click en "AGREGAR PRODUCTO" lo agregue') //ruta para agregar un nuevo item
-})
+router.get('/create', controller.create)
 
-router.get('/edit/:id', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/admin/edit.html')) // vista agregar un nuevo item v
-})
+router.post('/create', controller.create_post )
 
-router.put('/edit/:id', (req, res) => {
-    res.send('Ruta para ver modificar el producto') //ruta para modificar agregar un nuevo item
-})
+router.get('/edit/:id', controller.edit_id)
 
-router.delete('/delete/:id', (req, res) => {
-    res.send('Ruta para borrar el producto') //ruta para modificar agregar un nuevo item
-})
+router.put('/edit/:id', controller.edit_put)
+
+router.delete('/delete/:id', controller.delete )
 
 module.exports = router;
