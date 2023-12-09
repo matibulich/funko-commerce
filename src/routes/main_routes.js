@@ -11,11 +11,9 @@ router.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../../public/pages/login.html'))
 })
 
-router.get('/contacto', (req, res) => 
-    res.send
-    ('nadie hizo el contacto :((:(:('))
-
-
+router.get('/contacto', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../public/pages/contacto.html'))
+})
 
 
 module.exports = router;
