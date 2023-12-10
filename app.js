@@ -19,13 +19,6 @@ app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
-
-
-
-
-
-
-
 app.use(express.static('public'));
 
 
