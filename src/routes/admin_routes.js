@@ -1,12 +1,20 @@
 // rutas del admin
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const controller = require('../controllers/admin_controller')
 
 
-router.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html')) //entramos al admin
-})
 
+router.get('/',controller.admin )
+
+router.get('/create', controller.create)
+
+router.post('/create', controller.create_post )
+
+router.get('/edit/:id', controller.edit_id)
+
+router.put('/edit/:id', controller.edit_put)
+
+router.delete('/delete/:id', controller.delete )
 
 module.exports = router;

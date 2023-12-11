@@ -1,25 +1,17 @@
 // rutas de la tienda
 const express = require('express');
 const router = express.Router();
-const path = require('path')
+const controller = require('../controllers/shop_controller')
 
-router.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/shop.html'))
-})
 
-router.get('/item:id', (req, res) => {
-    res.send("visualizar un solo item por id")
-})
+router.get('/', controller.shop )
 
-router.post('/item:id/add', (req, res) => {
-    res.send("Ruta para agregar un producto")
- })
+router.get('/item:id', controller.item_id )
 
-router.get('/carrito', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../public/pages/carrito.html'))
-})
+router.post('/item:id/add',controller.carrito_add )
 
- router.post('/carrito', (req, res) =>
-    res.send(' Esta ruta agraga un nuevo item al carrito'))  
+router.get('/carrito',controller.carrito )
+
+ router.post('/carrito', controller.carrito_add )  
 
 module.exports = router;
