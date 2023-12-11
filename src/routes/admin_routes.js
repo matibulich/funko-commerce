@@ -1,18 +1,19 @@
 // rutas del admin
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const {admin,create,createItem,edit,editItem,deleteItem} = require ('../controllers/admin_controller');
 
 
-router.get('/', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})
 
-router.get('/create', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//devuelve html vista del create
+router.get('/', admin);
 
-router.post('/create', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//ruta para agregar nuevo item, no devuelve vista, crea un nuevo item en la base
+router.get('/create',  create)//devuelve html vista del create
 
-router.get('/edit/:id', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//editar item especifico
+router.post('/create',  createItem)//ruta para agregar nuevo item, no devuelve vista, crea un nuevo item en la base
 
-router.put('/edit/:id', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//recupero elemento para edita o eliminar
-router.delete('/delete/:id', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//eliminar
+router.get('/edit/:id', edit)//editar item especifico
+
+router.put('/edit/:id',  editItem)//recupero elemento para edita o eliminar
+router.delete('/delete/:id', deleteItem)//eliminar
 
 module.exports = router;

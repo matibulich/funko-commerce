@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const {login, respLogin,register,respRegister} = require ('../controllers/auth_controller');
 const path = require('path');
 
-router.get('/login', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//vista login
-router.post('/login', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//ruta que valida
 
-router.get('/register', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//vista 
-router.post('/register', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//crea nuevo usuario
+router.get('/login', login);//vista login
+router.post('/login', respLogin);//ruta que valida
 
-router.get('/logout', (req, res) => {res.sendFile(path.resolve(__dirname, '../../public/pages/admin/admin.html'))})//deslogueo
+router.get('/register', register);//vista 
+router.post('/register',respRegister);//crea nuevo usuario
+
+router.get('/logout', (req, res) => {res.sendFile(path.resolve(__dirname, ''))})//deslogueo
 
 
 
