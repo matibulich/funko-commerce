@@ -134,31 +134,29 @@ ol {
     list-style-type: none;
 }
 
-/* p { 
-    font-size: 18px;
-} */
+
 img {
     width: 100%;
 }
 
-/*Estilos para el Header*/
 
+/*Estilos para el Header*/
 
 .navbar__link {
     font-size: var(--font-medium);
-    display: inline-block;
-    padding: var(--spacing-16) var(--spacing-16);
+    display: inline-block;    
     transition: background .3s ease-in-out;
     position: relative;
-    color: #FFFFFF;
+    
 }
 
 .nav-link {
-    color: #FFFFFF;
+    color: #FFFFFF;/*no borrar modificacion de boot*/
 }
 
 .navbar__link:hover {
     background-color: var(--primary-900);
+    padding: var(--spacing-8) ;
 }
 
 .with-icon {
@@ -176,13 +174,14 @@ img {
     display: none;
     position: absolute;
     background-color: var(--dark-background-solid);
+    color: #FFFFFF;
     z-index: 3;
 }
 
 .submenu__link {
-    display: block;
+    display: block;    
     padding: var(--spacing-8)var(--spacing-16);
-    font-size: var(--font-medium);
+    font-size: var(--font-small);
 }
 
 .submenu__link:hover {
@@ -229,6 +228,7 @@ img {
 }
 
 .hero__link {
+    text-decoration: none;
     display: inline-block;
     font-size: var(--font-medium);
     background-color: var(--light-background-solid);
@@ -240,7 +240,7 @@ img {
 }
 
 .hero__link:hover {
-    background-color: var(--primary-900);
+    background-color: var(--primary-900);/*rojo*/
     color: var(--light-font);
 }
 
