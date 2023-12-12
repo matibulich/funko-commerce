@@ -4,12 +4,18 @@ const path = require('path');
 
 module.exports = { 
     shop: (req, res) => {
-         res.render(path.resolve(__dirname,'../views/shop/shop.ejs'));},
-         /*res.render(path.resolve(__dirname,'../views/shop/shop.ejs'),{title: "Shop"});},*/ //ver con profe
+        res.render('shop/shop',{title: "Shop"});
+    },
+         
+         
 
 
     item: (req, res) => {
-        res.render(path.resolve(__dirname,'../views/shop/item.ejs'))},
+        res.render('shop/item',{title: "Shop"});
+    },
+
+
+
     
     addItem: (req, res) => res.send('Nuevo item'),
 

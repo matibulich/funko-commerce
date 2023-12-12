@@ -5,6 +5,7 @@
 @import url('./menu.css');
 @import url('./create.css');
 @import url('./footer.css');
+@import url('./carrito.css');
 
 .col p.product-name,
 .item-view .product-description,
