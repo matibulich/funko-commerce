@@ -8,19 +8,16 @@ module.exports = {
     },
          
          
-
-
     item: (req, res) => {
-        res.render('shop/item',{title: "Shop"});
+        res.render('shop/item',{title: "Item"});
     },
-
-
-
     
     addItem: (req, res) => res.send('Nuevo item'),
 
     carrito: (req, res) => {
-        res.render(path.resolve(__dirname,'../views/shop/carrito.ejs'))},
+        res.render('shop/carrito',{title: "Carrito"});
+    },
+
 
     addCarrito: (req, res) => res.send('agregar item'),
         
