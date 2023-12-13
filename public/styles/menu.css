@@ -27,17 +27,13 @@ width:100vw;
 .navbar-nav{
     align-items: center;
 }
-/*.nav-link{
+.nav-link{
     font-family:'Raleway', sans-serif;
     color: white;
     
     
 }
 
-
-
-
-
 .nav-link:visited {
     color: #ebeaec;
-}*/
+}

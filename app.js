@@ -15,10 +15,6 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './src/views'));
 
-app.use(express.urlencoded());
-app.use(express.json());
-app.use(methodOverride('_method'));
-
 
 
 app.use('/', mainRoutes);
@@ -27,6 +23,9 @@ app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
 app.use(express.static('public'));
+app.use(express.urlencoded());
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 
 app.listen(PORT, () => {
