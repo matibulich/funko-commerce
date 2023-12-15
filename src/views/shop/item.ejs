@@ -5,14 +5,14 @@
   <div class="container text-left ">
     <div class="row">
       <div class="col d-flex m-auto">
-        <img src="/images/star-wars/baby-yoda-1.webp" alt="baby-yoda">
+        <img src="<%= item.images_front %>" alt="<%= item.nombre %>">
       </div>
 
       <div class="col d-flex flex-column justify-content-center align-items-start item-view">
-        <p class="product-brand">STAR WARS</p>
-        <h3 class="product-name">BABY YODA BLUEBALL</h2>
-        <h3 class="product-description">Figura coleccionable de baby yoda (Grogu) - the Mandalorian saga, edicion limitada.</h5>
-        <p class="product-price">$ 1799,99</p>
+        <p class="product-brand"><%= item.id %></p>
+        <h3 class="product-name"><%= item.nombre %></h2>
+        <h3 class="product-description"><%= item.product_description %></h5>
+        <p class="product-price"><%= item.precio %></p>
         <div class="agregar d-flex justify-content-left flex-wrap ">
           
           <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="0" max="100" value="0">
