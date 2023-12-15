@@ -5,14 +5,14 @@
   <div class="container text-left ">
     <div class="row">
       <div class="col d-flex m-auto">
-        <img src="<%= item.images_front %>" alt="<%= item.nombre %>">
+        <img src="/<%= item.images_front %>" alt="<%= item.nombre %>">
       </div>
 
       <div class="col d-flex flex-column justify-content-center align-items-start item-view">
-        <p class="product-brand"><%= item.id %></p>
+        <p class="product-brand"><%= item.marca %></p>
         <h3 class="product-name"><%= item.nombre %></h2>
         <h3 class="product-description"><%= item.product_description %></h5>
-        <p class="product-price"><%= item.precio %></p>
+        <p class="product-price">$<%= item.precio %></p>
         <div class="agregar d-flex justify-content-left flex-wrap ">
           
           <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="0" max="100" value="0">
@@ -35,13 +35,13 @@
         <div class="col text-start m-2 item-card"><img src="/images/star-wars/trooper-1.webp" alt="baby-yoda">
           <p class="product-brand">STAR WARS</p>
           <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
-          <h5 class="product-price">$ 1799,99</h5>
+          <h5 class="product-price">$ 1500</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
         </div>
         <div class="col text-start m-2 item-card"><img src="/images/pokemon/pidgeotto-1.webp" alt="pidgeotto">
           <p class="product-brand">POKEMON</p>
           <h4 class="product-name">PIDGEOTTO</h4>
-          <h5 class="product-price">$ 1799,99</h5>
+          <h5 class="product-price">$ 3000</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
 
         </div>
@@ -49,7 +49,7 @@
         <div class="col text-start item-card"><img src="/images/harry-potter/harry-1.webp" alt="luna">
           <p class="product-brand">HARRY POTTER</p>
           <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
-          <h5 class="product-price">$ 1799,99</h5>
+          <h5 class="product-price">$ 2500</h5>
           <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
 
         </div>

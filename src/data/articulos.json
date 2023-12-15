@@ -6,7 +6,8 @@
         "images_front": "./images/pokemon/charmander-1.webp",
         "images_back": "./images/pokemon/charmander-box.webp",
         "product_description": "Figura coleccionable pokemon",
-        "precio": 2500
+        "precio": 2500,
+        "SKU": "AES5456SD1"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "images_front": "./images/pokemon/dragonite-1.webp",
         "images_back": "./images/pokemon/dragonite-box.webp",
         "product_description": "Figura coleccionable pokemon",
-        "precio": 2500
+        "precio": 2500,
+        "SKU": "AD5456SD1"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "images_front": "./images/pokemon/pidgeotto-1.webp",
         "images_back": "./images/pokemon/pidgeotto-box.webp",
         "product_description": "Figura coleccionable pokemon",
-        "precio": 3000
+        "precio": 3000,
+        "SKU": "ES5456SD1"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "images_front": "./images/pokemon/pikachu-1.webp",
         "images_back": "./images/pokemon/pikachu-box.webp",
         "product_description": "Figura coleccionable pokemon",
-        "precio": 3500
+        "precio": 3500,
+        "SKU": "DS5456SD1"
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "images_front": "./images/pokemon/vulpix-1.webp",
         "images_back": "./images/pokemon/vulpix-box.webp",
         "product_description": "Figura coleccionable pokemon",
-        "precio": 3550
+        "precio": 3550,
+        "SKU": "CS5456SD1"
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
         "images_front": "./images/star-wars/baby-yoda-1.webp",
         "images_back": "./images/star-wars/baby-yoda-box.webp",
         "product_description": "Figura coleccionable Star wars",
-        "precio": 4000
+        "precio": 4000,
+        "SKU": "BS545SD1"
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
         "images_front": "./images/star-wars/bobbafeth-1.webp",
         "images_back": "./images/star-wars/bobbafeth-box.webp",
         "product_description": "Figura coleccionable Star wars",
-        "precio": 4500
+        "precio": 4500,
+        "SKU": "AS235676SD1"
     },
     {
         "id": 8,
@@ -69,7 +76,8 @@
         "images_front": "./images/star-wars/luke-1.webp",
         "images_back": "./images/star-wars/luke-box.webp",
         "product_description": "Figura coleccionable Star wars",
-        "precio": 2500
+        "precio": 2500,
+        "SKU": "AS54F45SD1"
     },
     {
         "id": 9,
@@ -78,7 +86,8 @@
         "images_front": "./images/star-wars/trooper-1.webp",
         "images_back": "./images/star-wars/trooper-box.webp",
         "product_description": "Figura coleccionable Star wars",
-        "precio": 1500
+        "precio": 1500,
+        "SKU": "AS54356SD1"
     },
     {
         "id": 10,
@@ -87,7 +96,8 @@
         "images_front": "./images/harry-potter/harry-1.webp",
         "images_back": "./images/harry-potter/harry-box.webp",
         "product_description": "Figura coleccionable Harry Potter",
-        "precio": 2500
+        "precio": 2500,
+        "SKU": "ASF4556SD1"
     },
     {
         "id": 11,
@@ -96,7 +106,8 @@
         "images_front": "./images/harry-potter/hermione-1.webp",
         "images_back": "./images/harry-potter/hermione-box.webp",
         "product_description": "Figura coleccionable Harry Potter",
-        "precio": 3000
+        "precio": 3000,
+        "SKU": "AS544566SD1"
     },
     {
         "id": 12,
@@ -105,7 +116,8 @@
         "images_front": "./images/harry-potter/luna-1.webp",
         "images_back": "./images/harry-potter/luna-box.webp",
         "product_description": "Figura coleccionable Harry Potter",
-        "precio": 3550
+        "precio": 3550,
+        "SKU": "AS5456SD1"
     },
     {
         "id": 13,
@@ -114,7 +126,8 @@
         "images_front": "./images/harry-potter/snape-patronus-1.webp",
         "images_back": "./images/harry-potter/snape-patronus-box.webp",
         "product_description": "Figura coleccionable Harry Potter",
-        "precio": 5000
+        "precio": 5000,
+        "SKU": "AS5436SD1"
     }
 
 
