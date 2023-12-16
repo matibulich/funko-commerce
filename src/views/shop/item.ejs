@@ -4,15 +4,21 @@
 
   <div class="container text-left ">
     <div class="row">
-      <div class="col d-flex m-auto">
-        <img src="/<%= item.images_front %>" alt="<%= item.nombre %>">
+      <div class="col d-flex m-auto product-image-list">
+        <picture class="card-item__cover">
+        <img  class="product-image card-item__img--front " src="/<%= item.images_front %> " alt="<%= item.nombre %>">
+        <img  class="product-image card-item__img--back " src="/<%= item.images_back %> " alt="<%= item.nombre %>">    
+      </picture>
       </div>
+      
 
       <div class="col d-flex flex-column justify-content-center align-items-start item-view">
         <p class="product-brand"><%= item.marca %></p>
         <h3 class="product-name"><%= item.nombre %></h2>
         <h3 class="product-description"><%= item.product_description %></h5>
         <p class="product-price">$<%= item.precio %></p>
+
+
         <div class="agregar d-flex justify-content-left flex-wrap ">
           
           <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="0" max="100" value="0">
@@ -22,37 +28,49 @@
         </div>
           <button type="button" class="btn btn-danger add-btn" id="btn-add">Agregar al carrito</button>
         </div>
-        <p class="product-cuotas"><a href="#">Ver metodos de pago</a> - 3 CUOTAS SIN INTERES</p>
+        <p class="product-cuotas"><a href="#">Ver metodos de pago </a><%= item.cuotas %> CUOTAS SIN INTERES</p>
 
       </div>
 
-      <div class="row productos-relacionados">
-        <h3 class="d-flex mt-5">PRODUCTOS RELACIONADOS</h3>
+      <section class="slider container glide">
+        <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
+        <div class="glide__track" data-glide-el="track">
+          <ul class="slider__items glide__slides">
+              <% articulos.forEach(product => { %>
+                  <% if (product.id !== item.id) { %> 
+                      <li class="slider__item glide__slide">   
+                          <article class="card-item item-card">
+                              <a href="/shop/item/<%= Number(product.id) %>">
+                                  <picture class="card-item__cover">
 
+                                      <img class="product-image card-item__img--front " src="/<%= product.images_front %>" alt="<%= product.nombre %>">
+                                      <img class="product-image card-item__img--back " src="/<%= product.images_back %>" alt="<%= product.nombre %>">    
+                                  </picture>
+                              </a>
+                              <p class="product-brand"><%= product.marca %></p>
+                              <h4 class="product-name"><%= product.nombre %></h4>
+                              <h5 class="product-price">$ <%= product.precio %></h5>
+                              <p class="product-cuotas"><%= product.cuotas %> CUOTAS SIN INTERÉS</p>
+                          </article>                       
+                      </li>
+                  <% } %>
+              <% }); %>
+          </ul>
       </div>
 
-      <div class="row d-flex cards">
-        <div class="col text-start m-2 item-card"><img src="/images/star-wars/trooper-1.webp" alt="baby-yoda">
-          <p class="product-brand">STAR WARS</p>
-          <h4 class="product-name">STORMTROOPER LIGHTSABER</h4>
-          <h5 class="product-price">$ 1500</h5>
-          <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
-        </div>
-        <div class="col text-start m-2 item-card"><img src="/images/pokemon/pidgeotto-1.webp" alt="pidgeotto">
-          <p class="product-brand">POKEMON</p>
-          <h4 class="product-name">PIDGEOTTO</h4>
-          <h5 class="product-price">$ 3000</h5>
-          <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
 
+      
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon
+                    icon="ic:twotone-chevron-left"></iconify-icon></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon
+                    icon="ic:twotone-chevron-right"></iconify-icon></button>
         </div>
 
-        <div class="col text-start item-card"><img src="/images/harry-potter/harry-1.webp" alt="luna">
-          <p class="product-brand">HARRY POTTER</p>
-          <h4 class="product-name">LUNA LOVEGOOD LION MASK</h4>
-          <h5 class="product-price">$ 2500</h5>
-          <p class="product-cuotas">3 CUOTAS SIN INTERÉS</p>
+    </section>
+        
 
-        </div>
+    
 
       </div>
 

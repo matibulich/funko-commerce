@@ -10,14 +10,16 @@ module.exports = {
          
     item: (req, res) => {
                
+        
         const item_id = Number(req.params .id);
         const item = articulos.find(articulo => articulo.id === item_id )
-
+        
         if (item) {
-            res.render('shop/item', { title: "Item.id", item });
+            res.render('shop/item', { title: "Item.id", item ,articulos});//agregar un parametro para que lo renderise tambien!!
         } else {
             res.status(404).send('Item no encotrado');
         }
+        
     },
     
     addItem: (req, res) => res.send('Nuevo item'),
