@@ -27,7 +27,7 @@
 
       <!-- Contenido de las filas -->
       <% articulos.forEach(product => { %>
-      <div class="row mt-2 ">
+      <div class="row mt-2 mb-1">
         <div class="col-md-2"><span><%= product.id %></span></div>
         <div class="col-md-2"><span><%= product.SKU %></span></div>
         <div class="col-md-2"><span><%= product.nombre %></span></div>
@@ -35,8 +35,10 @@
         <div class="col-md-2">
           <!-- Botones de Modificar y Eliminar -->
          
-          <p class="text-danger">Borrar</p>
-          <p class="text-primary">Editar</p>
+          <a href="./admin/edit/<%= Number(product.id) %>"><button type="button" class="btn btn-sm btn-primary">
+            Editar
+          </button></a>
+          <button type="button" class="btn btn-sm btn-danger">Borrar</button>
         </div>
       </div>
       <% }); %>

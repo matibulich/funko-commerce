@@ -8,7 +8,8 @@
         "product_description": "Figura coleccionable pokemon",
         "precio": 2500,
         "SKU": "AES5456SD1",
-        "cuotas": 3
+        "cuotas": 3,
+        "stock": 3
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "product_description": "Figura coleccionable pokemon",
         "precio": 2500,
         "SKU": "AD5456SD1",
-        "cuotas": 3
+        "cuotas": 3,
+        "stock": 12
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "product_description": "Figura coleccionable pokemon",
         "precio": 3000,
         "SKU": "ES5456SD1",
-        "cuotas": 3
+        "cuotas": 3,
+        "stock": 6
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "product_description": "Figura coleccionable pokemon",
         "precio": 3500,
         "SKU": "DS5456SD1",
-        "cuotas": 3
+        "cuotas": 3,
+        "stock": 5
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
         "product_description": "Figura coleccionable pokemon",
         "precio": 3550,
         "SKU": "CS5456SD1",
-        "cuotas": 3
+        "cuotas": 3,
+        "stock": 19
     },
     {
         "id": 6,
@@ -63,7 +68,8 @@
         "product_description": "Figura coleccionable Star wars",
         "precio": 4000,
         "SKU": "BS545SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 8
     },
     {
         "id": 7,
@@ -74,7 +80,8 @@
         "product_description": "Figura coleccionable Star wars",
         "precio": 4500,
         "SKU": "AS235676SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 23
     },
     {
         "id": 8,
@@ -85,7 +92,8 @@
         "product_description": "Figura coleccionable Star wars",
         "precio": 2500,
         "SKU": "AS54F45SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 22
     },
     {
         "id": 9,
@@ -96,7 +104,8 @@
         "product_description": "Figura coleccionable Star wars",
         "precio": 1500,
         "SKU": "AS54356SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 25
     },
     {
         "id": 10,
@@ -107,7 +116,8 @@
         "product_description": "Figura coleccionable Harry Potter",
         "precio": 2500,
         "SKU": "ASF4556SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 20
     },
     {
         "id": 11,
@@ -118,7 +128,8 @@
         "product_description": "Figura coleccionable Harry Potter",
         "precio": 3000,
         "SKU": "AS544566SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 10
     },
     {
         "id": 12,
@@ -129,7 +140,8 @@
         "product_description": "Figura coleccionable Harry Potter",
         "precio": 3550,
         "SKU": "AS5456SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 18
     },
     {
         "id": 13,
@@ -140,6 +152,7 @@
         "product_description": "Figura coleccionable Harry Potter",
         "precio": 5000,
         "SKU": "AS5436SD1",
-        "cuotas": 6
+        "cuotas": 6,
+        "stock": 15
     }
 ]
