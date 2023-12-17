@@ -26,7 +26,8 @@
           <button class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
           <button class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
         </div>
-          <button type="button" class="btn btn-danger add-btn" id="btn-add">Agregar al carrito</button>
+        <button type="submit" class="btn btn-danger add-btn" form="agregarCarrito">Agregar al carrito</button>
+        <form id="agregarCarrito" action="/shop/item/<%= Number(item.id) %>/add" method="POST"></form>
         </div>
         <p class="product-cuotas"><a href="#">Ver metodos de pago </a><%= item.cuotas %> CUOTAS SIN INTERES</p>
 

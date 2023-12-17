@@ -22,10 +22,31 @@ module.exports = {
         
     },
     
-    addItem: (req, res) => res.send('Nuevo item'),
+    addItem: 
+
+    (req, res) => {
+        const itemId = req.params.id;
+        const item = articulos.find((articulo) => articulo.id === Number(itemId));
+    
+        if (item) {
+          // Obtener o inicializar el carrito en la sesión
+          req.session.cart = req.session.cart || [];
+    
+          // Agregar el ítem al carrito
+          req.session.cart.push(item);
+    
+          res.redirect('/shop/carrito'); // Redirigir a la página del carrito
+        } else {
+          res.status(404).send('Item no encontrado');
+        }
+      },
+
+
+
 
     carrito: (req, res) => {
-        res.render('shop/carrito',{title: "Carrito"});
+        const cart = req.session.cart || [];
+        res.render('shop/carrito',{title: "Carrito", cart});
     },
 
     addCarrito: (req, res) => res.send('agregar item'),
