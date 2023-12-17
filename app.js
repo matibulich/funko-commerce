@@ -1,7 +1,18 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 const methodOverride = require ('method-override')
+
+
+app.use(
+    session({
+      secret: 'grupo6',
+      resave: false,
+      saveUninitialized: true,
+    })
+  );
+
 
 /* Importamos rutas */
 
@@ -26,6 +37,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(methodOverride('_method'));
+
 
 
 app.listen(PORT, () => {
