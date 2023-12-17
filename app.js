@@ -31,3 +31,4 @@ app.use(methodOverride('_method'));
 app.listen(PORT, () => {
     console.log(`Servidor inicializado en http://localhost:${PORT}`)
 })
+

@@ -1,0 +1,21 @@
+.popUp_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px; 
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid red;
+   text-align: center;
+    
+}
+.popUp_data {
+
+    color: grey;
+    
+    border:0px ;
+    border-bottom: solid 1px #FF3333;
+    border-radius: 0px;
+}
