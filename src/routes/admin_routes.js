@@ -17,6 +17,6 @@ router.get('/edit/:id', edit)//editar item especifico
 
 
 router.put('/edit/:id',  editItem)//recupero elemento para edita o eliminar
-router.delete('/delete/:id', deleteItem)//eliminar
+router.post('/delete/:id', deleteItem)//eliminar
 
 module.exports = router;
