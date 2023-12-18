@@ -28,18 +28,19 @@ app.set('views', path.join(__dirname, './src/views'));
 
 
 
+
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
+
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/auth', authRoutes);
 
-app.use(express.static('public'));
-app.use(express.urlencoded());
-app.use(express.json());
-app.use(methodOverride('_method'));
-
-
 
 app.listen(PORT, () => {
     console.log(`Servidor inicializado en http://localhost:${PORT}`)
 })
+

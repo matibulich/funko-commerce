@@ -3,7 +3,7 @@
     <body>
 
                 
-            <form id="contactForm"class="container mt-5 col-md-4 ">
+            <form id="contactForm"class="container mt-5 col-md-4 formulario">
                 <h2>CONTACTO</h2>
                 <div class="row mb-3 mt-4 formulario">
                     <label class=" col-md-1 col-form-label" for="nombre">Nombre:</label>
@@ -26,19 +26,21 @@
                 </div>
                 <div class="row mt-3 formulario d-flex col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-3 ">
                     <button type="button" class="text-center " id="btn-abrir-popUp">Enviar Formulario</button>       
-              
+                </div>
+                <dialog class="popUp_content" id="popUpContacto">
+                    <h3>Ingresaste los siguientes datos</h3>
+                    <div id="datosContacto"></div>
+                    <h4>Gracias por contactarnos</h4>
+                    <button class="text-center " id="btn-cerrar-popUp">Aceptar</button>
+                   
+                  </dialog>
+
             </form>
 
-            <dialog class="" id="popUpContacto">
-                <h3>Ingresaste los siguientes datos</h3>
-                <div class="" id="datosContacto"></div>
-                <h4>Gracias por contactarnos</h4>
-                <button class="boton-ingresar"  id="btn-cerrar-popUp">Aceptar</button>
-               
-              </dialog>
+
         </div>
 
-
+       
 
 
     <%- include('partials/footer.ejs')  %>

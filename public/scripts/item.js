@@ -1,5 +1,5 @@
 function sumar() {
-    var cantidadInput = document.getElementById("item_cantidad");
+    var cantidadInput = document.getElementById("item_cantidad");//si hash porque ya busca por id!!!!   
     var cantidad = parseInt(cantidadInput.value);
 
     cantidad += 1;
@@ -9,9 +9,10 @@ function sumar() {
 function restar() {
     var cantidadInput = document.getElementById("item_cantidad");
     var cantidad = parseInt(cantidadInput.value);
+   
 
-    if(cantidad <= 0)  {
-      cantidadInput = 0
+    if(cantidad <= 1)  {
+      cantidadInput = 1
 
     } else{  cantidad -= 1;
         cantidadInput.value = cantidad;

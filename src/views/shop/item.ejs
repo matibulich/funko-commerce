@@ -19,15 +19,26 @@
         <p class="product-price">$<%= item.precio %></p>
 
 
-        <div class="agregar d-flex justify-content-left flex-wrap ">
-          
-          <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="0" max="100" value="0">
-          <div class="cantidad d-flex flex-column">
-          <button class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
-          <button class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
-        </div>
-        <button type="submit" class="btn btn-danger add-btn" form="agregarCarrito">Agregar al carrito</button>
-        <form id="agregarCarrito" action="/shop/item/<%= Number(item.id) %>/add" method="POST"></form>
+        <form id="agregarCarrito" action="/shop/item/<%= Number(item.id) %>/update" method="POST">
+          <div class="agregar d-flex justify-content-left flex-wrap ">
+            <% if (existente){ %>
+            <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="<%= existente.cantidad %>">
+            <% }else { %>
+              <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="1">
+              <% } %>
+            <div class="cantidad d-flex flex-column">
+            <button type="button" class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
+            <button type="button" class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
+          </div>
+          <% if ( existente){ %>
+            <button type="submit" class="btn btn-danger add-btn" >Actualizar carrito</button> 
+           <% }else{ %>
+              <button type="submit" class="btn btn-danger add-btn" >Agregar al carrito</button> 
+              <% } %>          
+        </form>
+
+
+
         </div>
         <p class="product-cuotas"><a href="#">Ver metodos de pago </a><%= item.cuotas %> CUOTAS SIN INTERES</p>
 
@@ -40,7 +51,7 @@
               <% articulos.forEach(product => { %>
                   <% if (product.id !== item.id) { %> 
                       <li class="slider__item glide__slide">   
-                          <article class="card-item item-card">
+                          <span class="card-item item-card">
                               <a href="/shop/item/<%= Number(product.id) %>">
                                   <picture class="card-item__cover">
 
@@ -52,7 +63,7 @@
                               <h4 class="product-name"><%= product.nombre %></h4>
                               <h5 class="product-price">$ <%= product.precio %></h5>
                               <p class="product-cuotas"><%= product.cuotas %> CUOTAS SIN INTERÉS</p>
-                          </article>                       
+                          </span>                       
                       </li>
                   <% } %>
               <% }); %>

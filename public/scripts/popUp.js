@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  if(document.querySelector("#contactForm")){
+
     const btnAbrirPopUpCont = document.querySelector("#btn-abrir-popUp");
     const btnCerrarPopUpCont = document.querySelector("#btn-cerrar-popUp");
     const popUpContacto = document.querySelector("#popUpContacto");
@@ -22,4 +24,5 @@ document.addEventListener("DOMContentLoaded", function () {
     btnCerrarPopUpCont.addEventListener("click", () => {
         popUpContacto.close();
     });
+  }
   });

@@ -24,42 +24,83 @@
                 <article class="flex-item-1">
                     <table class="product">
                         <th>
-                            <img class="image" src="/<%= item.images_front %>" alt="<%= item.nombre %>">
+                            <img class="image" src="/<%= item.item.images_front %>" alt="<%= item.nombre %>">
                         </th>
                         <th class="product-description">
-                            <h1><%= item.nombre %></h1>
-                            <h2><%= item.marca %></h2>
-                            <p class="product-price">Precio: $<%= item.precio %></p>
+                            <h1><a href="/shop/item/<%= item.item.id %>"><%= item.item.nombre %></a></h1>
+                            <h2><%= item.item.marca %></h2>
+                            <p class="product-price">Precio: $<%= item.item.precio %></p>
                         </th>
                     </table>
                 </article>
                 <article class="flex-item-2">
-                    <table class="cantidad">
-                        <th class="numero">
-                            <!-- Mostrar la cantidad del item en el carrito -->
-                            <span id="valor"><%= item.cantidad %></span>
-                        </th>
-                        <td class="operation">
-                            <div class="suma" id="incrementar">+</div>
-                            <div class="resta" id="decrementar">-</div>
-                        </td>
-                    </table>
+                    <form id="agregarCarrito" action="/shop/item/<%= Number(item.item.id) %>/update" method="POST">
+                        <div class="content_carrito agregar d-flex justify-content-left flex-wrap ">
+                     
+                          <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="<%= item.cantidad %>">
+                 
+                          <div class="cantidad d-flex flex-column">
+                          <button type="button" class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
+                          <button type="button" class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
+                        </div>
+
+                          <button type="submit" class="btn btn-danger add-btn" >Actualizar carrito</button> 
+
+                      </form>
+                  
                 </article>
                 <article class="flex-item-3">
                    
-                    <div class="fount">$<%= item.cantidad * item.precio %></div>
+                    <div class="fount">$<%= item.cantidad * item.item.precio %></div>
                 </article>
                 <article>
-                    <svg class="delete" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                        <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
-                    </svg>
+                    <a href="/shop/item/<%= item.item.id %>/delete">
+                        <svg class="delete" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                        </svg>
+                    </a>
                 </article>
             </section>
+
+
         <% }); %>
+        <section class="title-resume">
+            <article>
+                <span class="layout-title-resume">RESUMEN</span>
+            </article>
+        </section>
+        <section class="resume">
+            <article class="flex-conteiner-resume">
+                <article>
+                    <article class="table-resume">
+                            <span>CANTIDAD DE ELEMENTOS</span>
+                            <span class="layout-resume"><%= totalItem %></span>
+                    </article>
+                    <article class="table-resume">
+                            <span>SUBTOTAL</span>
+                            <span class="layout-resume">$<%= total %></span>
+                    </article>
+                    <article class="table-resume">
+                            <span>ENVIO</span>
+                            <span class="layout-resume">$0,00</span>
+                    </article>
+                    <article class="flex-conteiner-total">
+                            <span>TOTAL</span>
+                            <span class="layout-total">$<%= total %></span>
+                    </article>
+                </article>
+            </article>
+        </section>
+        <section>
+            <article class="flex-conteiner-pagar mb-5">
+                <div class="layout-pagar">IR A PAGAR</div>
+            </article>
+        </section>
     <% } else { %>
-      
-        <p>El carrito está vacío.</p>
+      <p>Carrito Vacio</p>
+        
     <% } %>
+
 
     <%- include('../partials/footer.ejs')  %>   
 </body>
