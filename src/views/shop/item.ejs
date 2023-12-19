@@ -6,8 +6,8 @@
     <div class="row">
       <div class="col d-flex m-auto product-image-list">
         <picture class="card-item__cover">
-        <img  class="product-image card-item__img--front " src="/<%= item.images_front %> " alt="<%= item.nombre %>">
-        <img  class="product-image card-item__img--back " src="/<%= item.images_back %> " alt="<%= item.nombre %>">    
+        <img  class="product-image card-item__img--front " src="/images/<%= item.images_front %> " alt="<%= item.nombre %>">
+        <img  class="product-image card-item__img--back " src="/images/<%= item.images_back %> " alt="<%= item.nombre %>">    
       </picture>
       </div>
       
@@ -55,8 +55,8 @@
                               <a href="/shop/item/<%= Number(product.id) %>">
                                   <picture class="card-item__cover">
 
-                                      <img class="product-image card-item__img--front " src="/<%= product.images_front %>" alt="<%= product.nombre %>">
-                                      <img class="product-image card-item__img--back " src="/<%= product.images_back %>" alt="<%= product.nombre %>">    
+                                      <img class="product-image card-item__img--front " src="/images/<%= product.images_front %>" alt="<%= product.nombre %>">
+                                      <img class="product-image card-item__img--back " src="/images/<%= product.images_back %>" alt="<%= product.nombre %>">    
                                   </picture>
                               </a>
                               <p class="product-brand"><%= product.marca %></p>

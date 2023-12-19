@@ -37,7 +37,7 @@ module.exports = {
         
         req.session.cart = req.session.cart || [];
     
-        if (item) {        
+        if (item) {        //si exite lo modifico
             
             const existente = req.session.cart.find((producto) => producto.item.id === item.id)
             
@@ -52,7 +52,7 @@ module.exports = {
                 })
                 
             }
-            else{
+            else{ // sino esta en el array de carrito lo agrega
                 req.session.cart.push({
                     item,
                     cantidad

@@ -1,7 +1,21 @@
 const path = require('path');
 const articulos = require('../data/articulos.json')
 const fs = require('fs');
+const multer = require('multer');
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        
+      cb(null, path.resolve(__dirname, '../../public/uploads')); // El directorio donde se guardarán las imágenes
+    },
+    filename: (req, file, cb) => {
+        console.log(file)
+      const fileName = `${Date.now()}-${file.originalname}`;
+      cb(null, fileName);
+    },
+});
+  
+const upload = multer({ storage });
 
 module.exports = { 
     admin: (req, res) => res.render('admin/admin',{title: "Admin", role: "admin", articulos}),
@@ -22,20 +36,41 @@ module.exports = {
 
     editAction: (req, res) => {
         const item_id = Number(req.params.id);
-        const data = fs.readFileSync(articulos, 'utf-8');
-        const jsonData = JSON.parse(data);
+        const jsonFile = __dirname + '/../data/articulos.json';
+        const data = fs.readFileSync(jsonFile, 'utf-8');
+        let jsonData = JSON.parse(data);
         const unItem = jsonData.find(item => item.id === item_id);//encuentro el item del id adentro del json
+        const body = req.body;
+
+        jsonData = jsonData.map(product => {
+            if(product.id == body.id) {
+                body.id = parseInt(body.id);
+                body.precio = parseInt(body.precio);
+                body.stock = parseInt(body.stock);
+                body.descuento = parseInt(body.descuento);
+                body.cuotas = parseInt(body.cuotas);
+                product = body;
+            }
+            return product;
+        })
+
+        fs.writeFileSync(jsonFile, JSON.stringify(jsonData), 'utf-8');
+
+        //upload.single('images_front')
 
         if (unItem) {
-            res.json(unItem);
+            res.redirect('/admin');
           } else {
             res.status(404).json({ error: 'Objeto no encontrado' });
           }
+          
 
     },
 
 
     editItem: (req, res) => res.send('impacta la modificacion'),
+
+
     createItem: (req, res) => {
         // Aquí deberías tener lógica para obtener los datos del nuevo ítem desde la solicitud (req.body, por ejemplo)
         console.log(req.body)

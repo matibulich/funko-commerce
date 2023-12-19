@@ -59,11 +59,11 @@
                         <ul class="product-image-list">
                             <li class="product-image">
                                 <a href="/shop/item/<%= Number(product.id) %>">
-                                    <img class="product-image" src="<%= product.images_front %>" alt="<%= product.nombre %>" /> 
+                                    <img class="product-image" src="/images/<%= product.images_front %>" alt="<%= product.nombre %>" /> 
                                 
                             </li>
                             <li class="hovered">
-                                <img class="product-image hidden" src="<%= product.images_back %>" alt="<%= product.nombre %>" /> </a>
+                                <img class="product-image hidden" src="/images/<%= product.images_back %>" alt="<%= product.nombre %>" /> </a>
                             </li>
                         </ul>
                         
