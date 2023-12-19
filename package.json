@@ -2,16 +2,18 @@
   "name": "funkoshop",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node index.js",
+    "build": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Grupo6js/integrador.git"
   },
   "dependencies": {
+    "cookie-session": "^2.0.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",

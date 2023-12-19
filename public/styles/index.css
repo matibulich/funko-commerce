@@ -252,6 +252,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     padding: var(--spacing-16) 0;
+    padding: 2rem
 }
 
 .collection:nth-child(3) .collection__cover {
@@ -278,7 +279,7 @@ img {
     font-size: var(--font-medium);
     background-color: var(--dark-background-solid);
     color: var(--light-font);
-    padding: var(--spacing-16) var(--spacing-36);
+    padding: 2rem;
     border-radius: 50px;
     font-weight: 500;
     transition: background .3s ease-in-out;

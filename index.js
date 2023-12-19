@@ -1,15 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const session = require('express-session');
+const session = require('cookie-session');
 const methodOverride = require ('method-override')
 
 
 app.use(
     session({
       secret: 'grupo6',
-      resave: false,
-      saveUninitialized: true,
+     
     })
   );
 
@@ -24,12 +23,12 @@ const authRoutes = require('./src/routes/auth_routes')
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './src/views'));
+app.set('views', path.resolve(__dirname, './src/views'));
 
 
 
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));

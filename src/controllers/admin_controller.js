@@ -99,7 +99,7 @@ module.exports = {
         
         jsonData.push(nuevoItem);
         console.log(jsonData)
-        fs.writeFileSync(jsonFile, JSON.stringify(jsonData), 'utf-8');
+        fs.writeFileSync(jsonFile, JSON.stringify(jsonData,null, 2), 'utf-8');
 
         res.redirect('/admin'); 
     },
