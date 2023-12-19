@@ -91,9 +91,13 @@ small#emailHelp {
 
   
 .label__shop {
-    
-    color: #000000;    
+    color: #000000;
     font-size: 2rem;
+    transition: opacity 0.3s ease-out;
+}
+
+.form-floating textarea:focus + .label__shop {
+    opacity: 0;
 }
 
 

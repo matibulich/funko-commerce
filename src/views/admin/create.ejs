@@ -1,140 +1,106 @@
-<%- include('../partials/header.ejs')  %>
+<%- include('../partials/header.ejs') %>
 <body>
     <section>
         <div class="container">
-            <form action="/admin/create" method="POST" enctype="multipart/form-data">
+            <form action="/admin/create" method="POST" ><!--enctype="multipart/form-data"-->
                 <h2 class="mt-4">CREAR NUEVO ITEM</h2>
                 <div class="row mb-3 mt-4 formulario">
-
-                    <label class=" col-md-1 col-form-label" for="categoria"> Categoría:</label>
+                    <label class="col-md-1 col-form-label" for="categoria"> Categoría:</label>
                     <div class="col-md-3 ">
-                        <select class="form-select" aria-label="Seleccionar" id="marca" name="marca">
-                            <option selected>Seleccionar</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="Seleccionar" id="categoria" name="categoria"required>
+                            
+                            <option disabled selected value="">Seleccionar</option>
+                            <option value="Funkos">Funkos</option>
+                            <option value="Llaveros">Llaveros</option>
+                            <option value="Remeras">Remeras</option>
                         </select>
+
                     </div>
 
-                    <label class="col-md-1 col-form-label" for="licencia"> Licencia:</label>
+                    <label class="col-md-1 col-form-label" for="marca"> Licencia:</label>
                     <div class="col-md-3">
-                        <select class="form-select" aria-label="Licencia" id="licencia" name="licencia">
-
+                        <select class="form-select" aria-label="Licencia" id="marca" name="marca"required>
                             <option selected>Seleccionar</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Pokemon">Pokemon</option>
+                            <option value="Star wars">Star wars</option>
+                            <option value="Harry Potter">Harry Potter</option>
                         </select>
                     </div>
-
                 </div>
+
                 <div class="row mb-3 formulario">
-                    <label class="col-md-2 col-form-label" for="nombre">Nombre del
-                        producto:</label>
-                    <div class="col-md-4 ">
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="Kakashi Hatake" required>
+                    <label class="col-md-2 col-form-label" for="nombre">Nombre del producto:</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
-
                 </div>
+
                 <div class="row mb-3 formulario">
-                    <div class="col-md-8 ">
+                    <div class="col-md-8">
                         <div class="form-floating">
-                            <textarea class="form-control" id="product_description" name="product_description"style="height: 100px"></textarea>
-                            <label for="product_description">Descripción del producto</label>
+                            <textarea class="form-control custom-text-area" id="product_description" name="product_description" style="height: 100px"></textarea>
+                            <label class="label__shop" for="product_description">Descripción del producto</label>
                         </div>
                     </div>
                 </div>
 
-
-
-
                 <div class="row mb-3 formulario">
-
-
                     <label class="col-md-1 col-form-label" for="SKU" class="form-label">SKU:</label>
-                    <div class="col-md-2 ">
-                        <input type="text" class="form-control" id="SKU" name="SKU" value="SSK11AB001" required>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="SKU" name="SKU" required>
                     </div>
-
 
                     <label class="col-md-1 col-form-label" for="precio" class="form-label">Precio:</label>
-                    <div class="col-md-2 ">
-                        <input type="text" class="form-control" id="precio" name="precio" value="$0.000" required>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control"  min="0"  id="precio" name="precio" required>
                     </div>
-
-
 
                     <label class="col-md-1 col-form-label" for="stock" class="form-label">Stock:</label>
-                    <div class="col-md-1 ">
-                        <input type="text" class="form-control" id="stock" name="stock" value="0" required>
+                    <div class="col-md-1">
+                        <input type="number" min="0" class="form-control" id="stock" name="stock" required>
                     </div>
-
                 </div>
 
-
-
                 <div class="row mb-3 formulario">
-
-
                     <label class="col-md-1 col-form-label" for="descuento" class="form-label">Descuento:</label>
-                    <div class="col-md-1 ">
-                        <input type="text" class="form-control" id="descuento" name="descuento" value="0%" required>
+                    <div class="col-md-1">
+                        <input type="number" class="form-control"  min="0" id="descuento" name="descuento" required>
                     </div>
 
                     <label class="col-md-1 col-form-label" for="cuotas"> Cuotas</label>
                     <div class="col-md-3">
-                        <select class="form-select" aria-label="cuotas" id="cuotas" name="cuotas">
-
-                            <option selected>3 Cuotas sin interés</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" aria-label="cuotas" id="cuotas" name="cuotas" required>
+                            <option selected>Seleccionar</option>
+                            <option value="3">3 Cuotas sin interés</option>
+                            <option value="6">6 Cuotas sin interés</option>
+                            <option value="12">12 Cuotas sin interés</option>
                         </select>
                     </div>
-
-
-
-
-
                 </div>
+
                 <div class="row mb-3 formulario">
-
-                    <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
-                    <div class="col-md-6 ">
-                        <input class="form-control justify-content-sm-center" id="images_front" name="images_front" style="border: 0px;" type="file" id="formFile">
-
+                    <div class="col-md-6">
+                        <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
+                        
+                        <input type="hidden" id="images_front" name="images_front" value="street-fighter/sf-ryu-1.webp">
                     </div>
 
-                    <div class="row mt-3 formulario d-flex ">
-
-                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-1 ">
-                            <button type="submit">Agergar producto</button>
-                        </div>
-
-                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 ">
-                            <button class="text-center " type="reset">Limpiar</button>
-                        </div>
-
-
-
+                    <div class="col-md-6">
+                        <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
+                       
+                        <input type="hidden" id="images_front" name="images_back" value="street-fighter/sf-ryu-box.webp">
                     </div>
 
+                    <div class="row mt-3 d-flex formulario">
+                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-1">
+                            <button class="boton-ingresar" type="submit">Agregar producto</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-             </div>
-
-
+            </form>
         </div>
-        </form>
     </section>
 
-    <%- include('../partials/footer.ejs')  %>
-
-
+    <%- include('../partials/footer.ejs') %>
 </body>
-
 </html>
-
-
-
-
