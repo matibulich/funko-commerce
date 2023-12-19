@@ -2,11 +2,11 @@
   "name": "funkoshop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node index.js",
-    "build": "node index.js"
+    "start": "node app.js",
+    "build": "node app.js"
   },
   "repository": {
     "type": "git",
