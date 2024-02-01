@@ -1,30 +1,32 @@
 const path = require('path');
-const articulos = require('../data/articulos.json')
-
+//const articulos = require('../data/articulos.json')
+// const {getAllItems, getOneItem} = require("../models/main_model") SE LLAMA DESDE main_service.js
+const {getAll} = require("../service/main_service")
 
 module.exports = { 
     shop: (req, res) => {  
         res.render('shop/shop',{title: "Shop", articulos});
     },
          
-         
-    item: (req, res) => {
-               
-        req.session.cart = req.session.cart || [];
-        const item_id = Number(req.params.id);
-        const item = articulos.find(articulo => articulo.id === item_id )
-       
-        const existente = req.session.cart.find((producto) => producto.item.id === item.id) || false
-        
-        
-        if (item) {
-            res.render('shop/item', { title: "Item.id", item ,articulos, existente});//agregar un parametro para que lo renderise tambien!!
-        } else {
-            res.status(404).send('Item no encotrado');
-        }
-        
+// ME TRAE TODOS LOS ITEMS
+
+    getItems: async (req, res) => {
+       const items = await getAll();
+       res.send(items)         
+             
     },
     
+
+//ME TRAE UN SOLO ITEM
+    getItem: async (req, res) => {
+        const id = req.params.id_item;
+        const item = await getOneItem({id_product: id}); //llamamos a los campos de id_product
+        res.send(item)
+    },
+    
+
+
+
     updateCart: 
         //agregar un producto cuando esta vacio
         //agregar una cantidad de productos a uno ya existente
