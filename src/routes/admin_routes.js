@@ -1,23 +1,24 @@
-// rutas del admin
 const express = require('express');
 const router = express.Router();
-const {admin,create,createItem,edit,editItem,deleteItem,editAction} = require ('../controllers/admin_controller');
+const controller = require ('../controllers/admin_controller');
+const upload = require("../middlewares/uploadFiles")
+const {isLogged} = require("../middlewares/auth")
+
+
+//////////////////////////////////////////////////////////////////////////////
+ 
+
+
+router.get('/', isLogged, controller.admin);
+
+router.get('/create', isLogged, controller.create)//devuelve html vista del create
+router.post('/create', isLogged, upload.array("images", 2), controller.createItem)//ruta para agregar nuevo item, no devuelve vista, crea un nuevo item en la base
+
+ router.get('/edit/:id_item', isLogged, controller.edit)//editar item especifico
+ router.put('/edit/:id_item', isLogged, upload.array("images", 2),  controller.editItem)//impacta la edicion
+
+ router.delete('/delete/:id_item', isLogged, controller.deleteItem)
 
 
 
-router.get('/', admin);
-
-router.get('/create',  create)//devuelve html vista del create
-router.post('/create',  createItem)//ruta para agregar nuevo item, no devuelve vista, crea un nuevo item en la base
-
-
-router.get('/edit', (req, res) => res.redirect("/"))
-router.get('/edit/:id', edit)//editar item especifico
-router.post('/edit/:id', editAction)//post en la misma ruta lo devuelve al edit
-
-
-
-router.put('/edit/:id',  editItem)//recupero elemento para edita o eliminar
-router.post('/delete/:id', deleteItem)//eliminar
-
-module.exports = router;
+ module.exports = router;

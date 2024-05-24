@@ -147,7 +147,7 @@ img {
 .navbar__link {
     font-size: var(--font-medium);
     display: inline-block;    
-    transition: background .3s ease-in-out;
+    transition: color .3s ease-in-out;
     position: relative;
     
 }
@@ -157,7 +157,7 @@ img {
 }
 
 .navbar__link:hover {
-    background-color: var(--primary-900);
+    color:red;
     padding: var(--spacing-8) ;
 }
 
@@ -167,31 +167,9 @@ img {
     gap: var(--spacing-8);
 }
 
-.with-submenu:hover .submenu {
-    display: block
-}
 
-.submenu {
-    width: 300px;
-    display: none;
-    position: absolute;
-    background-color: var(--dark-background-solid);
-    color: #FFFFFF;
-    z-index: 3;
-}
-
-.submenu__link {
-    display: block;    
-    padding: var(--spacing-8)var(--spacing-16);
-    font-size: var(--font-small);
-}
-
-.submenu__link:hover {
-    background-color: var(--primary-900);
-    transition: background .3s ease-in-out;
-}
 .nav-item .nav-link:hover {
-    color: #ebeaec;
+    color: #db0d0d;
 }
 
 

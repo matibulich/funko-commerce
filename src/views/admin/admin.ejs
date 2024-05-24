@@ -26,19 +26,19 @@
       </div>
 
       <!-- Contenido de las filas -->
-      <% articulos.forEach(product => { %>
+      <% data.forEach(item => { %>
       <div class="row mt-2 mb-1">
-        <div class="col-md-2"><span><%= product.id %></span></div>
-        <div class="col-md-2"><span><%= product.SKU %></span></div>
-        <div class="col-md-2"><span><%= product.nombre %></span></div>
-        <div class="col-md-2"><span><%= product.marca %></span></div>
+        <div class="col-md-2"><span><%= item.id_product %></span></div>
+        <div class="col-md-2"><span><%= item.SKU_product %></span></div>
+        <div class="col-md-2"><span><%= item.name_product %></span></div>
+        <div class="col-md-2"><span><%= item.name_licence %></span></div>
         <div class="col-md-2">
           <!-- Botones de Modificar y Eliminar -->
          
-          <a href="./admin/edit/<%= Number(product.id) %>"><button type="button" class="btn btn-sm btn-primary">
+          <a href="/admin/edit/<%= item.id_product %>"><button type="button" class="btn btn-sm btn-primary">
             Editar
           </button></a>
-          <form method="POST" action="/admin/delete/<%= Number(product.id) %>" style="display: inline;">
+          <form method="POST" enctype="application/x-www-form-urlencoded" action="/admin/delete/<%= item.id_product %>?_method=DELETE" style="display: inline;">
             <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
           </form>
         </div>

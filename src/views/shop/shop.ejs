@@ -54,25 +54,25 @@
 
 
             <div class="col-lg-8 col-md-9 col-sm-12 store-row container row">
-                <% articulos.forEach(product => { %>
+             <% data.forEach(item =>  { %> 
                     <div class="col-md-3 col-sm-6 w-auto text-start item-card">
                         <ul class="product-image-list">
                             <li class="product-image">
-                                <a href="/shop/item/<%= Number(product.id) %>">
-                                    <img class="product-image" src="/images/<%= product.images_front %>" alt="<%= product.nombre %>" /> 
+                                <a href="/shop/item/<%= item.id_product %>">
+                                    <img class="product-image" src="../images/<%= item.img_front_product %>" alt="<%= item.name_product %>" /> 
                                 
                             </li>
                             <li class="hovered">
-                                <img class="product-image hidden" src="/images/<%= product.images_back %>" alt="<%= product.nombre %>" /> </a>
+                                <img class="product-image hidden" src="../images/<%= item.img_back_product %>" alt="<%= item.name_product %>" /> </a>
                             </li>
                         </ul>
                         
-                        <p class="product-brand"><%= product.marca %></p>
-                        <h4 class="product-name"><%= product.nombre %></h4>
-                        <h5 class="product-price">$ <%= product.precio %></h5>
-                        <p class="product-cuotas"><%= product.cuotas %> CUOTAS SIN INTERÉS</p>
-                    </div>
-                <% }); %>
+                        <p class="product-brand"><%= item.name_licence %></p>
+                        <h4 class="product-name"><%= item.name_product %></h4>
+                        <h5 class="product-price"><%= item.price_product %></h5>
+                        <p class="product-cuotas">HASTA <%= item.cuota_product %> CUOTAS SIN INTERÉS</p>
+                    </div> <%  })  %> 
+           
             </div>
    
 

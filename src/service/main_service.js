@@ -1,16 +1,38 @@
 //CAPA SERVICIOS: FUNCIONA DE INTERMEDIARIO ENTRE CONTROLADOR Y MODELO
 
+const {
+  getAllItemsModel,
+  getOneItemModel,
+  deleteOneItemModel,
+} = require("../models/product_model");
 
 
-const {getAllItems, getOneItem} = require("../models/main_model")
+const getAllService = async () => {
+  let data = await getAllItemsModel();
+  if (data.isError) {
+    data = `Hubo un error al traer los productos ${data.message}`;
+  }
 
-const getAll = async (params) =>{
-  //logica
+  return data;
+};
 
-  const data =  getAllItems(params)
-  return data
-}
+const deleteItemService = async (params) => {
+  let data = await deleteOneItemModel({ id_product: params });
+ 
+   return data;
+   
+};
+
+const getOneItemService = async (params) => {
+  let data = await getOneItemModel({id_product: params});
+ return data;
+    
+};
+
+
 
 module.exports = {
-    getAll
-}
+  getAllService,
+  deleteItemService,
+  getOneItemService,
+};

@@ -1,132 +1,94 @@
-const path = require('path');
-const articulos = require('../data/articulos.json')
-const fs = require('fs');
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        
-      cb(null, path.resolve(__dirname, '../../public/uploads')); // aca guarda las imagenes nuevas (luego pasar a image)
-    },
-    filename: (req, file, cb) => {
-        console.log(file)
-      const fileName = `${Date.now()}-${file.originalname}`;
-      cb(null, fileName);
-    },
-});
-  
-const upload = multer({ storage });
-
-module.exports = { 
-    admin: (req, res) => res.render('admin/admin',{title: "Admin", role: "admin", articulos}),
-    create: (req, res) => res.render('admin/create',{title: "Create", role: "admin"}),    
-
-    edit: (req, res) => {               
-        
-        const item_id = Number(req.params .id);
-        const item = articulos.find(articulo => articulo.id === item_id )
-        
-        
-        if (item) {
-            res.render('admin/edit', { title: "Item.id", item ,articulos});//agregar un parametro para que lo renderise tambien!!
-        } else {
-            res.status(404).send('Item no encotrado');
-        }        
-    },
-
-    editAction: (req, res) => {
-        const item_id = Number(req.params.id);
-        const jsonFile = __dirname + '/../data/articulos.json';
-        const data = fs.readFileSync(jsonFile, 'utf-8');
-        let jsonData = JSON.parse(data);
-        const unItem = jsonData.find(item => item.id === item_id);//encuentro el item del id adentro del json
-        const body = req.body;
-
-        jsonData = jsonData.map(product => {
-            if(product.id == body.id) {
-                body.id = parseInt(body.id);
-                body.precio = parseInt(body.precio);
-                body.stock = parseInt(body.stock);
-                body.descuento = parseInt(body.descuento);
-                body.cuotas = parseInt(body.cuotas);
-                product = body;
-            }
-            return product;
-        })
-
-        fs.writeFileSync(jsonFile, JSON.stringify(jsonData), 'utf-8');
-
-        //upload.single('images_front')
-
-        if (unItem) {
-            res.redirect('/admin');
-          } else {
-            res.status(404).json({ error: 'Objeto no encontrado' });
-          }
-          
-
-    },
+const path = require("path");
+const fs = require("fs");
+const {createItemModel, editItemModel} = require("../models/product_model")
+const {
+  deleteItemService,
+  getAllService,
+  getOneItemService,
+} = require("../service/main_service");
 
 
-    editItem: (req, res) => res.send('impacta la modificacion'),
+module.exports = {
+  admin: async (req, res) => {
+    const data = await getAllService();
 
+    res.render("admin/admin.ejs", { title: "ADMIN", data });
+  },
 
-    createItem: (req, res) => { 
-      //arranca igual que el edit
-      const jsonFile = __dirname + '/../data/articulos.json';
-      const data = fs.readFileSync(jsonFile, 'utf-8');
-      let jsonData = JSON.parse(data);
-      const body = req.body;
+  deleteItem: async (req, res) => {
+    await deleteItemService(req.params.id_item);
+    res.redirect("/admin");
+    //console.log(req.params.id_item)
+  },
 
-      
-      //busco el id mas alto
-      const highestId = jsonData.reduce((maxId, item) => (item.id > maxId ? item.id : maxId), 0);   
-
-        const nuevoItem = {
-            id: highestId+1,
-            categoria: body.categoria,
-            marca: body.marca,
-            nombre: body.nombre,
-            product_description: body.product_description ,
-            SKU: body.SKU,
-            precio: parseInt(body.precio),
-            stock: parseInt(body.stock),
-            descuento:parseInt( body.descuento),
-            cuotas:parseInt(body.cuotas),
-            images_front: body.images_front,
-            images_back: body.images_back
-        };
-        
-        jsonData.push(nuevoItem);
-        console.log(jsonData)
-        fs.writeFileSync(jsonFile, JSON.stringify(jsonData,null, 2), 'utf-8');
-
-        res.redirect('/admin'); 
-    },
-
-
-
-
-
-
-
-    deleteItem:(req, res) => {
-        const itemId = Number(req.params.id);
-        const itemIndex = articulos.findIndex(product => product.id === itemId); //Buscar el id a borrar en que indice del array esta. se alamacena en itemIndex
-      
-        if (itemIndex !== -1) {
-          articulos.splice(itemIndex, 1);
-      
-          // Sobrescribir el json con el nuevo array
-          const filePath = path.resolve(__dirname, '../data/articulos.json');
-          fs.writeFileSync(filePath, JSON.stringify(articulos, null, 2));//null no filtra y 2 deja don indentaciones en el json
-
-          res.redirect('/admin'); // Redirigir a la página de admin después de eliminar
-        } else {
-          res.status(404).send('Producto no encontrado');
-        }
-      }
+  create: (req, res) =>
+    res.render("admin/create", { title: "Create", role: "admin" }),
     
-        
-        
+  createItem: async (req, res) =>{
+   // console.log(req.files)
+    const productSchema={
+      name_product: req.body.nombre,
+      description_product:req.body.product_description,
+      price_product:req.body.precio,
+      stock_product:req.body.stock,
+      disc_product:req.body.descuento,
+      cuota_product:req.body.cuotas,
+      SKU_product:req.body.SKU,
+      id_licence:req.body.marca,
+      img_front_product:  req.files[0].filename,
+      img_back_product:  req.files[1].filename,
+      
+    }
+    const result = await createItemModel([Object.values(productSchema)]) //crea un array del objeto con los valores 
+ 
+    console.log(result);
+    res.redirect("/admin");
+    console.log(req.files)
+  },
+
+    
+  edit: async (req, res) => {
+    const [data] = await getOneItemService(req.params.id_item);
+    res.render("admin/edit", { title: "Item", data });
+    console.log(data)
+  },
+  
+  editItem: async(req, res) =>{
+
+    const {id_item} = req.params
+    const tieneImg = req.files.length !== 0; 
+
+    const productSchema = tieneImg ?    
+    {
+      name_product: req.body.nombre,
+      description_product:req.body.product_description,
+      price_product:req.body.precio,
+      stock_product:req.body.stock,
+      disc_product:req.body.descuento,
+      cuota_product:req.body.cuotas,
+      SKU_product:req.body.SKU,
+      id_licence:req.body.marca,
+      img_front_product:  req.files[0].filename,
+      img_back_product:  req.files[1].filename,
+      
+    } :
+    {
+      name_product: req.body.nombre,
+      description_product:req.body.product_description,
+      price_product:req.body.precio,
+      stock_product:req.body.stock,
+      disc_product:req.body.descuento,
+      cuota_product:req.body.cuotas,
+      SKU_product:req.body.SKU,
+      id_licence:req.body.marca,      
+    } ;
+
+    const result = await editItemModel(productSchema, {id_product : id_item})
+    console.log(result)
+    
+
+    res.redirect("/admin")
+  }, 
+
+
 };

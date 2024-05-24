@@ -104,16 +104,11 @@ small#emailHelp {
 
 /* formulario */
 
-.formulario label{
-    font-family: 'Raleway', sans-serif, light;
-    font-weight:bold;
-}
-
 .formulario input{
     color: grey;
-    
     border:0px ;
     border-bottom: solid 1px #FF3333;
     border-radius: 0px;
 } 
+
 

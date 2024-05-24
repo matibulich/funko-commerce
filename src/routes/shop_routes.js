@@ -4,10 +4,12 @@ const router = express.Router();
 const controller = require('../controllers/shop_controller');
 
 router.get('/', controller.shop);
-router.get('/items', controller.getItems); //TRAE TODOS LOS ITEMS
-router.get('/items/:id_item', controller.getItem); //TRAE UN SOLO ITEM
-router.post('/item/:id/update', controller.updateCart);
-router.get('/carrito', controller.carrito);
-router.delete('/item/:id/', controller.deleteItem)
+//TRAE TODOS LOS ITEMS
+router.get('/item/:id_item', controller.getItem); //TRAE UN SOLO ITEM
+//router.post('/item/update:id_item', controller.updateCart);
+
+router.post('/item/add/:id_item', controller.addItem)
+router.get('/carrito', controller.carrito); //mostrar vista carrito
+router.post('/carrito') //agregar item al carrito
 
 module.exports = router;

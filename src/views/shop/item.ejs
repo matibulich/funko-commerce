@@ -1,72 +1,85 @@
 <%- include('../partials/header.ejs')  %>
 
 <body>
-
+  
   <div class="container text-left ">
+    
     <div class="row">
+      
       <div class="col d-flex m-auto product-image-list">
+        
         <picture class="card-item__cover">
-        <img  class="product-image card-item__img--front " src="/images/<%= item.images_front %> " alt="<%= item.nombre %>">
-        <img  class="product-image card-item__img--back " src="/images/<%= item.images_back %> " alt="<%= item.nombre %>">    
+        <img  class="product-image card-item__img--front " src="/images/<%= data.img_front_product %> " alt="<%= data.name_product %>">
+        <img  class="product-image card-item__img--back " src="/images/<%= data.img_back_product %> " alt="<%= data.name_product %>">    
       </picture>
       </div>
       
+       <div class="col d-flex flex-column justify-content-center align-items-start item-view">
+      <form id="agregarCarrito" action="/shop/item/add/<%= data.id_product %>" method="post">
+       
+        <input type="text" name="item_nombre" value="<%= data.name_product %>" hidden>
+        <input type="text" name="item_precio" value="<%= data.price_product %>" hidden>
+        <input type="hidden" name="item_imagen" value="<%= data.img_front_product %>" >
+        
+        <p class="product-brand"><%= data.name_licence %></p>
+        <h3 class="product-name"><%= data.name_product %></h3>
+        <h3 class="product-description"><%= data.description_product %></h3>
+        <p  class="product-price">$<%= data.price_product %></p>
 
-      <div class="col d-flex flex-column justify-content-center align-items-start item-view">
-        <p class="product-brand"><%= item.marca %></p>
-        <h3 class="product-name"><%= item.nombre %></h2>
-        <h3 class="product-description"><%= item.product_description %></h5>
-        <p class="product-price">$<%= item.precio %></p>
-
-
-        <form id="agregarCarrito" action="/shop/item/<%= Number(item.id) %>/update" method="POST">
+        
           <div class="agregar d-flex justify-content-left flex-wrap ">
-            <% if (existente){ %>
-            <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="<%= existente.cantidad %>">
-            <% }else { %>
-              <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="1">
-              <% } %>
+           
+            <input class="item_cantidad col-2" type="text" id="item_cantidad" name="item_cantidad" min="1" max="100" value="1">
+           
+           
+           
             <div class="cantidad d-flex flex-column">
             <button type="button" class="cantidad_add_sub d-flex align-items-center" id="add_item" onclick="sumar()">+</button>
             <button type="button" class="cantidad_add_sub d-flex align-items-center" id="subs_item" onclick="restar()">-</button>
           </div>
-          <% if ( existente){ %>
-            <button type="submit" class="btn btn-danger add-btn" >Actualizar carrito</button> 
-           <% }else{ %>
+         
               <button type="submit" class="btn btn-danger add-btn" >Agregar al carrito</button> 
-              <% } %>          
+                      
         </form>
 
 
 
         </div>
-        <p class="product-cuotas"><a href="#">Ver metodos de pago </a><%= item.cuotas %> CUOTAS SIN INTERES</p>
+        <p class="product-cuotas"><%= data.cuota_product %> CUOTAS SIN INTERES</p>
 
       </div>
 
+    </div>
+
+      
+      
       <section class="slider container glide">
         <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
         <div class="glide__track" data-glide-el="track">
           <ul class="slider__items glide__slides">
-              <% articulos.forEach(product => { %>
-                  <% if (product.id !== item.id) { %> 
-                      <li class="slider__item glide__slide">   
+             
+                  
+            <!--corregir para que traiga solo los items de la misma licencia ---> 
+
+                      <li class="slider__item glide__slide"> 
+                        <!--  dataArray.forEach(product => {  - -->
+                          <!--  if (true) {  - --> 
                           <span class="card-item item-card">
-                              <a href="/shop/item/<%= Number(product.id) %>">
+                              <a href="/shop/item/">
                                   <picture class="card-item__cover">
 
-                                      <img class="product-image card-item__img--front " src="/images/<%= product.images_front %>" alt="<%= product.nombre %>">
-                                      <img class="product-image card-item__img--back " src="/images/<%= product.images_back %>" alt="<%= product.nombre %>">    
+                                      <img class="product-image card-item__img--front " src="/images/<%= data.img_front_product %>" alt="<%= data.name_product %>">
+                                      <img class="product-image card-item__img--back " src="/images/<%= data.img_front_product %>" alt="<%= data.name_product %>">    
                                   </picture>
                               </a>
-                              <p class="product-brand"><%= product.marca %></p>
-                              <h4 class="product-name"><%= product.nombre %></h4>
-                              <h5 class="product-price">$ <%= product.precio %></h5>
-                              <p class="product-cuotas"><%= product.cuotas %> CUOTAS SIN INTERÉS</p>
-                          </span>                       
+                              <p class="product-brand"><%= data.name_licence %></p>
+                              <h4 class="product-name"><%=  data.name_product %></h4>
+                              <h5 class="product-price">$ <%= data.price_product %></h5>
+                             </span>                       
                       </li>
-                  <% } %>
-              <% }); %>
+                 
+                      <!--  } 
+                       });  -->
           </ul>
       </div>
 

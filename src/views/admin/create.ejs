@@ -2,17 +2,15 @@
 <body>
     <section>
         <div class="container">
-            <form action="/admin/create" method="POST" ><!--enctype="multipart/form-data"-->
+            <form action="/admin/create" method="post" enctype="multipart/form-data">
                 <h2 class="mt-4">CREAR NUEVO ITEM</h2>
                 <div class="row mb-3 mt-4 formulario">
                     <label class="col-md-1 col-form-label" for="categoria"> Categoría:</label>
                     <div class="col-md-3 ">
-                        <select class="form-select" aria-label="Seleccionar" id="categoria" name="categoria"required>
+                        <select class="form-select" aria-label="Seleccionar" id="categoria" name="categoria">
                             
-                            <option disabled selected value="">Seleccionar</option>
-                            <option value="Funkos">Funkos</option>
-                            <option value="Llaveros">Llaveros</option>
-                            <option value="Remeras">Remeras</option>
+                            <option selected value="Funkos">Funkos</option>
+                       
                         </select>
 
                     </div>
@@ -21,9 +19,9 @@
                     <div class="col-md-3">
                         <select class="form-select" aria-label="Licencia" id="marca" name="marca"required>
                             <option selected>Seleccionar</option>
-                            <option value="Pokemon">Pokemon</option>
-                            <option value="Star wars">Star wars</option>
-                            <option value="Harry Potter">Harry Potter</option>
+                            <option value="1">Pokemon</option>
+                            <option value="2">Star wars</option>
+                            <option value="3">Harry Potter</option>
                         </select>
                     </div>
                 </div>
@@ -37,9 +35,12 @@
 
                 <div class="row mb-3 formulario">
                     <div class="col-md-8">
+                        <label for="product_description">Descripción del producto</label>
                         <div class="form-floating">
+                            
                             <textarea class="form-control custom-text-area" id="product_description" name="product_description" style="height: 100px"></textarea>
-                            <label class="label__shop" for="product_description">Descripción del producto</label>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -78,25 +79,21 @@
                     </div>
                 </div>
 
-                <div class="row mb-3 formulario">
-                    <div class="col-md-6">
-                        <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
-                        
-                        <input type="hidden" id="images_front" name="images_front" value="street-fighter/sf-ryu-1.webp">
+                <div class="row mb-3">
+                    <div class="col-md-6 formulario">
+                        <label  for="images_front">Imagen 1:
+                            
+                        </label>
+                        <input type="file" name="images" id="images_front" multiple >
+                     
                     </div>
 
-                    <div class="col-md-6">
-                        <label for="formFile" class="col-md-1 col-form-label">Imágenes:</label>
-                       
-                        <input type="hidden" id="images_front" name="images_back" value="street-fighter/sf-ryu-box.webp">
-                    </div>
-
-                    <div class="row mt-3 d-flex formulario">
-                        <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-1">
-                            <button class="boton-ingresar" type="submit">Agregar producto</button>
-                        </div>
-                    </div>
+                    
                 </div>
+                <div class="row mt-3 d-flex formulario">
+                    <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 mb-1">
+                        <button class="boton-ingresar" type="submit">Agregar producto</button>
+                    </div>
             </form>
         </div>
     </section>

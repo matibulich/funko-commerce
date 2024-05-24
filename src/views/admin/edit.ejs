@@ -3,8 +3,8 @@
     <body>
         <section>
             <div class="container">
-                <form action="/admin/edit/<%= item.id %>" method="POST"> <!-- enctype="multipart/form-data" siempre para recibir archivos -->
-                    <input type="hidden" name="id" value="<%= item.id %>">
+                <form action="/admin/edit/<%= data.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<%= data.id_product %>">
                     <h2 class="mt-4">EDITAR ITEM</h2>
                     <div class="row mb-3 mt-4 formulario">
 
@@ -12,23 +12,33 @@
                         <div class="col-md-3 ">
                             <select class="form-select" aria-label="Seleccionar" id="categoria" name="categoria">
                                 <option selected>
-                                    <%= item.categoria %>
+                                    <%= data.name_category %>
                                 </option>
-                                <option value="Funkos">Funkos</option>
-                                <option value="Llaveros">Llaveros</option>
-                                <option value="Remeras">Remeras</option>
+                                
                             </select>
                         </div>
 
                         <label class="col-md-1 col-form-label" for="marca"> Licencia:</label>
                         <div class="col-md-3">
                             <select class="form-select" aria-label="Licencia" id="marca" name="marca">
-                                <option selected>
-                                    <%= item.marca %>
-                                </option>
-                                <option value="Pokemon">Pokemon</option>
-                                <option value="Star wars">Star wars</option>
-                                <option value="Harry Potter">Harry Potter</option>
+
+                      
+                                <% if(data.id_licence == 1) { %>
+                                    <option value="1" selected>Pokemon</option>
+                                    <option value="2">Star Wars</option>
+                                    <option value="3">Harry Potter</option>
+    
+                                <% } else if(data.id_licence == 2) { %>
+                                    <option value="1">Pokemon</option>
+                                    <option value="2" selected>Star Wars</option>
+                                    <option value="3">Harry Potter</option>
+    
+                                <% } else if(data.id_licence == 3) { %>
+                                    <option value="1">Pokemon</option>
+                                    <option value="2">Star Wars</option>
+                                    <option value="3" selected>Harry Potter</option>
+    
+                                <% } %>
                             </select>
                         </div>
                     </div>
@@ -36,7 +46,7 @@
                     <div class="row mb-3 formulario">
                         <label class="col-md-2 col-form-label" for="nombre">Nombre del producto:</label>
                         <div class="col-md-4 ">
-                            <input type="text" class="form-control" id="nombre" name="nombre" value="<%= item.nombre %>" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<%= data.name_product %>" required>
                         </div>
                     </div>
 
@@ -45,9 +55,9 @@
                             <div class="form-floating">
                                 <textarea class="form-control custom-text-area" id="product_description"
                                     name="product_description"
-                                    style="height: 100px"><%= item.product_description %></textarea>
+                                    style="height: 100px"><%= data.description_product %></textarea>
                                 <label class="label__shop" for="product_description">
-                                    <%= item.product_description %>
+                                    <%= data.description_product %>
                                 </label>
                             </div>
                         </div>
@@ -56,19 +66,19 @@
                     <div class="row mb-3 formulario">
                         <label class="col-md-1 col-form-label" for="SKU" class="form-label">SKU:</label>
                         <div class="col-md-2 ">
-                            <input type="text" class="form-control" id="SKU" name="SKU" value="<%= item.SKU %>"
+                            <input type="text" class="form-control" id="SKU" name="SKU" value="<%= data.SKU_product %>"
                                 required>
                         </div>
 
                         <label class="col-md-1 col-form-label" for="precio" class="form-label">Precio:</label>
                         <div class="col-md-2 ">
-                            <input type="text" class="form-control" id="precio" name="precio" value="<%= item.precio %>"
+                            <input type="text" class="form-control" id="precio" name="precio" value="<%= data.price_product %>"
                                 required>
                         </div>
 
                         <label class="col-md-1 col-form-label" for="stock" class="form-label">Stock:</label>
                         <div class="col-md-1 ">
-                            <input type="text" class="form-control" id="stock" name="stock" value="<%= item.stock %>"
+                            <input type="text" class="form-control" id="stock" name="stock" value="<%= data.stock_product %>"
                                 required>
                         </div>
                     </div>
@@ -77,14 +87,14 @@
                         <label class="col-md-1 col-form-label" for="descuento" class="form-label">Descuento:</label>
                         <div class="col-md-1 ">
                             <input type="text" class="form-control" id="descuento" name="descuento"
-                                value="<%= item.descuento %>" required>
+                                value="<%= data.disc_product %>" required>
                         </div>
 
                         <label class="col-md-1 col-form-label" for="cuotas"> Cuotas</label>
                         <div class="col-md-3">
                             <select class="form-select" aria-label="cuotas" id="cuotas" name="cuotas">
-                                <option selected>
-                                    <%= item.cuotas %> Cuotas sin interés
+                                <option selected value="3">
+                                    <%= data.cuota_product %> Cuotas sin interés
                                 </option>
                                 <option value="6">6 Cuotas sin interés</option>
                                 <option value="12">12 Cuotas sin interés</option>
@@ -95,17 +105,17 @@
                     <div class="row mb-3 formulario">
                         <div class="col-md-6">
                             <label for="formFile" class="col-md-1 col-form-label">Imágen front:</label>
-                            <!-- <input class="form-control justify-content-sm-center" style="border: 0px;" type="file" id="formFile" name="images_front"> -->
-                            <img src="/images/<%= item.images_front %>" alt="Miniatura de la imagen" class="ms-2"style="max-width: 50px;">
-                            <input type="hidden" name="images_front" value="<%= item.images_front %>">
+                        
+                            <img src="/images/<%= data.img_front_product %>" alt="Miniatura de la imagen" class="ms-2"style="max-width: 50px;">
+                            <input type="hidden" name="images_front" value="<%= data.img_front_product %>">
                             
                         </div>
                         
                         <div class="col-md-6">
                             <label for="formFile" class="col-md-1 col-form-label">Imágen back:</label>
                             <!-- <input class="form-control justify-content-sm-center" style="border: 0px;" type="file" id="formFile" name="_images_back"> -->
-                            <input type="hidden" name="images_back" value="<%= item.images_back %>">
-                            <img src="/images/<%= item.images_back %>" alt="Miniatura de la imagen" class="ms-2" style="max-width: 50px;">
+                            <input type="hidden" name="images_back" value="<%= data.img_back_product %>">
+                            <img src="/images/<%=  data.img_back_product %>" alt="Miniatura de la imagen" class="ms-2" style="max-width: 50px;">
                         </div>
 
                         <div class="row mt-3 d-flex formulario">

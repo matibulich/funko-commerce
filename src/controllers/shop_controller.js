@@ -1,105 +1,89 @@
-const path = require('path');
-//const articulos = require('../data/articulos.json')
+const path = require("path");
 // const {getAllItems, getOneItem} = require("../models/main_model") SE LLAMA DESDE main_service.js
-const {getAll} = require("../service/main_service")
+const { getAllService, getOneItemService } = require("../service/main_service");
+const { title } = require("process");
 
-module.exports = { 
-    shop: (req, res) => {  
-        res.render('shop/shop',{title: "Shop", articulos});
-    },
-         
-// ME TRAE TODOS LOS ITEMS
+module.exports = {
+ 
+  // ME TRAE TODOS LOS ITEMS
 
-    getItems: async (req, res) => {
-       const items = await getAll();
-       res.send(items)         
-             
-    },
+  shop: async (req, res) =>  {
+   const data = await getAllService()
+   res.render("shop/shop.ejs", {title:"SHOP", data})
+   //console.log(data)
+  },
+
+  //ME TRAE UN SOLO ITEM
+  getItem: async (req, res) => {
+    const [data] = await getOneItemService(req.params.id_item);
+   
+    if(!data){
+     return res.status(404).send("El ID seleccionado no existe o fue eliminado")
+    }
     
-
-//ME TRAE UN SOLO ITEM
-    getItem: async (req, res) => {
-        const id = req.params.id_item;
-        const item = await getOneItem({id_product: id}); //llamamos a los campos de id_product
-        res.send(item)
-    },
+    res.render("shop/item.ejs", {title:"ITEM", data});
     
+  },
 
+  
 
+  addItem:(req, res) =>{
+    const data = req.params.id_item;
+    const cantidad = parseInt(req.body.item_cantidad)
+    const precio = parseInt(req.body.item_precio)
+    const nombreProducto = req.body.item_nombre
+    const imagenItem = req.body.item_imagen
 
-    updateCart: 
-        //agregar un producto cuando esta vacio
-        //agregar una cantidad de productos a uno ya existente
-        //restar una cantidad de productos
-
-    (req, res) => {
-        const itemId = req.params.id;
-        const item = articulos.find((articulo) => articulo.id === Number(itemId));
-        const cantidad = parseInt(req.body.item_cantidad);
-        
-        req.session.cart = req.session.cart || [];
-    
-        if (item) {        //si exite lo modifico
-            
-            const existente = req.session.cart.find((producto) => producto.item.id === item.id)
-            
-            if(existente){                
-               
-                req.session.cart = req.session.cart.map (producto => {
-                    if(producto.item.id == existente.item.id){
-                        producto.cantidad = cantidad;
-                    }
-
-                    return producto;
-                })
-                
-            }
-            else{ // sino esta en el array de carrito lo agrega
-                req.session.cart.push({
-                    item,
-                    cantidad
-                  });
-            }
-
-    
-          res.redirect('/shop/carrito'); // Redirigir a la página del carrito
-        } else {
-          res.status(404).send('Item no encontrado');
-        }
-      },
-
-
-
-
-    carrito: (req, res) => {
-        const cart = req.session.cart || [];
-
-        let totalItem = 0;
-        let total = 0;
-
-        cart.forEach(item => {
-            total += item.cantidad*item.item.precio;    
-            totalItem += item.cantidad;
-        });
-
-
-        res.render('shop/carrito',{title: "Carrito", cart, total,totalItem});
-    },
-
-    deleteItem: (req, res) => {
-
-        const itemId = parseInt(req.params.id);        
-        req.session.cart = req.session.cart || [];
-        console.log(itemId);
-        req.session.cart = req.session.cart.filter(producto => producto.item.id !== itemId);
-        console.log(req.session.cart);
-        res.redirect('/shop/carrito');
-
-
+    if(!req.session.cart){
+      req.session.cart = []
     }
 
+    const existeItem = req.session.cart.findIndex((item => item.id === data))
 
-    
+
+    if(existeItem >= 0){ 
+      // El ítem ya existe en el carrito, actualiza la cantidad
+      req.session.cart[existeItem].cantidad += cantidad;
+    }else{
+      req.session.cart.push({ id: data, cantidad: cantidad, precio: precio, nombreProducto: nombreProducto, img:imagenItem });
+    }
+
+     // Guarda la sesión y responde
+     req.session.save(error => {
+      if (error) {
+          return res.status(500).send('Error al guardar el ítem en el carrito');
+      }
+      res.redirect('/shop');
+               
+  })
+
+  },
+
+  updateCart: async (req,res)=>{
+    const data = await getOneItemService(req.params.id_item)
+
+  },
+   
+
+
+
+  carrito: (req, res) => {
+    const cart = req.session.cart || [];
+
+    let totalItem = 0;
+    let total = 0;
+
+    cart.forEach((item) => {
+      total += item.cantidad * item.precio;
+      totalItem += item.cantidad;
+    });
+    //contador de items carrito
+
+    res.render("shop/carrito", { title: "Carrito", cart, total, totalItem});
+
+
+    //console.log(cart)
+  },
+
+ 
 };
-
-
