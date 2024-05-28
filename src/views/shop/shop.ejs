@@ -3,17 +3,16 @@
 <body>
 
     <div class="container store-container m-auto">
-        <!-- <div class="row g-3 mb-5 mt-2"> -->
         <div class="row d-flex justify-content-center mt-5 p-0 g-0 store-content">
             <div class="col-lg-4 col-md-3 col-sm-12 filter-search">
                 <h3 class="filtro-titulo mt-2">Buscar</h3>
                 <input type="search" name="buscar" id="buscar" placeholder="filtro o categoría" class="form-control">
                 <h3 class="filtro-titulo mt-3">Ordenar por</h3>
-                <select class="form-select">
-                    <option value="1">Mayor a menor</option>
-                    <option value="2">Menor a mayor</option>
-                    <option value="3">Alfabético A-Z</option>
-                    <option value="3">Alfabético Z-A</option>
+                <select class="form-select" id="sort-select" onchange="updateSort()">
+                    <option value="price-desc" <%= sortOption === 'price-desc' ? 'selected' : '' %>>Mayor a menor precio</option>
+                    <option value="price-asc" <%= sortOption === 'price-asc' ? 'selected' : '' %>>Menor a mayor precio</option>
+                    <option value="alphabetical-az" <%= sortOption === 'alphabetical-az' ? 'selected' : '' %>>Alfabético A-Z</option>
+                    <option value="alphabetical-za" <%= sortOption === 'alphabetical-za' ? 'selected' : '' %>>Alfabético Z-A</option>
                 </select>
                 <h3 class="filtro-titulo mt-3">Precio</h3>
                 <div class="col d-flex filter-col">
@@ -74,12 +73,7 @@
                     </div> <%  })  %> 
            
             </div>
-   
-
-
-            
         </div>
-        <!-- </div> -->
         <nav class="d-flex justify-content-center my-4">
             <ul class="pagination">
                 <li class="page-item">
@@ -101,6 +95,13 @@
 
     <!-- Footer -->
     <%- include('../partials/footer.ejs')  %> 
+
+    <script>
+        function updateSort() {
+            const sortValue = document.getElementById('sort-select').value;
+            window.location.href = `/shop?sort=${sortValue}`;
+        }
+    </script>
 
 </body>
 

@@ -8,8 +8,9 @@ module.exports = {
   // ME TRAE TODOS LOS ITEMS
 
   shop: async (req, res) =>  {
-   const data = await getAllService()
-   res.render("shop/shop.ejs", {title:"SHOP", data})
+   const sortOption = req.query.sort || 'default';
+   const data = await getAllService(sortOption)
+   res.render("shop/shop.ejs", {title:"SHOP", data, sortOption})
    //console.log(data)
   },
 

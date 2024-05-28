@@ -7,14 +7,18 @@ const {
 } = require("../models/product_model");
 
 
-const getAllService = async () => {
-  let data = await getAllItemsModel();
+const getAllService = async (sortOption) => {
+  let data = await getAllItemsModel(sortOption);
   if (data.isError) {
     data = `Hubo un error al traer los productos ${data.message}`;
   }
 
   return data;
 };
+
+
+
+
 
 const deleteItemService = async (params) => {
   let data = await deleteOneItemModel({ id_product: params });

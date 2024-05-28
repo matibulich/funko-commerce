@@ -2,10 +2,33 @@
 
 const { conn } = require("../config/conn");
 
-const getAllItemsModel = async () => {
+const getAllItemsModel = async (sortOption) => {
   try {
+    let orderBy = "";
+
+    // Definir la cláusula de orden
+    switch (sortOption) {
+      case 'price-asc':
+        orderBy = "ORDER BY price_product ASC";
+        break;
+      case 'price-desc':
+        orderBy = "ORDER BY price_product DESC";
+        break;
+      case 'alphabetical-az':
+        orderBy = "ORDER BY name_product ASC";
+        break;
+      case 'alphabetical-za':
+        orderBy = "ORDER BY name_product DESC";
+        break;
+      default:
+        orderBy= ""; // Sin orden específico
+    }
+
     const [rows] = await conn.query(
-      "SELECT product.*, category.name_category, licence.name_licence FROM (product LEFT JOIN category ON product.id_category = category.id_category) LEFT JOIN licence ON product.id_licence = licence.id_licence"
+      `SELECT product.*, category.name_category, licence.name_licence 
+       FROM (product LEFT JOIN category ON product.id_category = category.id_category) 
+       LEFT JOIN licence ON product.id_licence = licence.id_licence 
+       ${orderBy}` // Aplicar la cláusula de ordenación
     );
     return rows;
   } catch (error) {
