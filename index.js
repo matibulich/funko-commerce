@@ -1,16 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
 const {initSession} = require("./src/middlewares/session")
 const methodOverride = require ('method-override');
 const contadorItems = require("./src/middlewares/contador")
 
-app.use(cors({
-  origin: '*', // Puedes restringir esto a los dominios específicos que necesites
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
-}));
 
 /* Importamos rutas */
   const mainRoutes = require('./src/routes/main_routes')
