@@ -40,6 +40,7 @@ app.use('/auth', authRoutes);
 const PORT = 3001;
 
 app.set('view engine', 'ejs');
+// app.set("views", path.resolve(__dirname, './src/views'));
 
 
 
