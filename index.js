@@ -6,7 +6,6 @@ const methodOverride = require ('method-override');
 const contadorItems = require("./src/middlewares/contador")
 
 
-
 /* Importamos rutas */
   const mainRoutes = require('./src/routes/main_routes')
   const adminRoutes = require('./src/routes/admin_routes')
