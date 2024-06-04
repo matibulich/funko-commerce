@@ -50,15 +50,17 @@ module.exports = {
     }
 
      // Guarda la sesión y responde
-     req.session.save(error => {
-      if (error) {
-          return res.status(500).send('Error al guardar el ítem en el carrito');
-      }
+    //  req.session.save(error => {
+    //   if (error) {
+    //       return res.status(500).send('Error al guardar el ítem en el carrito');
+    //   }
       res.redirect('/shop');
                
-  })
+  // )
+},
 
-  },
+
+  
 
   updateCart: async (req,res)=>{
     const data = await getOneItemService(req.params.id_item)
