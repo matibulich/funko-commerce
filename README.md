@@ -1,4 +1,4 @@
-funko-commerce.vercel.app
+https://funko-commerce.vercel.app
 
 DEPLOY EN VERCEL(SOLO LECTURA, NO DEJA AGREGAR NI MODIFICAR)
 
